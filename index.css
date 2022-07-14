@@ -2,6 +2,15 @@
 .main-content {
 	margin: auto;
 }
+
+.no-decoration {
+	text-decoration: none;
+}
+
+.black {
+	color: black;
+}
+
 .nav {
 	font-family: "Work Sans", sans-serif;
 	display: flex;
