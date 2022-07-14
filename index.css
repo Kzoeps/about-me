@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@500;800&display=swap");
+.main-content {
+	margin: auto;
+}
+.nav {
+	font-family: "Work Sans", sans-serif;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	list-style: none;
+}
+
+.nav-container {
+	width: 350px;
+	margin-left: auto;
+}
+
+.avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.avatar img {
+	border-radius: 50%;
+}
+
+.content-layout {
+	display: flex;
+	max-width: 700px;
+	justify-content: space-around;
+	margin: auto;
+	margin-top: 15%;
+}
+
+.active-underline {
+	text-decoration: underline;
+}
+
+.description h1 {
+	margin-top: 0;
+	font-weight: 800;
+}
+.description {
+	font-family: "Work Sans", sans-serif;
+	max-width: 400px;
+}
+
+.work-sans {
+	font-family: "Work Sans", sans-serif;
+}
+
+.description p {
+	font-size: 0.9rem;
+}
+
+.parent {
+    margin: 0;
+    padding: 10px;
+    background-color: bisque;
+}
+
+.socials {
+    font-size: 1.2rem;
+}
+.socials i {
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 500ms;
+}
+.socials a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    transition: 500ms;
+}
+
+.nav a:hover {
+    color: cornflowerblue;
+}
+
+.socials i:hover {
+    color: cornflowerblue;
+}

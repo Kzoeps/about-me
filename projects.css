@@ -1,0 +1,42 @@
+.project-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+}
+
+.title-container a {
+    text-decoration: none;
+    color: black;
+    transition: 500ms;
+}
+
+.title-container a:hover {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.title-container h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.title-container i {
+    margin-left: 10px;
+}
+
+.project-content-sub {
+    margin-top: 5%;
+}
+
+.project-description {
+    max-width: 650px;
+}
+
+.project-li {
+    margin-top: 30px;
+}
