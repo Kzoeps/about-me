@@ -41,3 +41,13 @@
 .project-li {
     margin-top: 30px;
 }
+
+@media screen and (max-width: 600px) {
+	.nav-container {
+		margin: auto;
+	}
+    .project-description {
+        text-align: justify;
+        margin-right: 10px;
+    }
+}

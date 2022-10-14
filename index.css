@@ -94,3 +94,27 @@
 .socials i:hover {
     color: cornflowerblue;
 }
+
+@media screen and (max-width: 600px) {
+	.content-layout {
+		flex-direction: column;
+	}
+	.nav-container {
+		margin: auto;
+	}
+	.description h1 {
+		text-align: center;
+		margin-top: 10px;
+	}
+	.description {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.description_content {
+		width: 350px;
+		text-align: justify;
+	}
+
+}
