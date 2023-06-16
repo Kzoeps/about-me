@@ -1,0 +1,20 @@
+.blog-post {
+    margin-bottom: 10%;
+}
+
+.blog-post section p {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.blog-post section h2 {
+    margin-bottom: 5px;
+}
+
+.mt-10 {
+    margin-top: 10px; 
+}
+
+.mono-space{
+    font-family: monospace;
+}

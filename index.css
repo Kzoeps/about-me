@@ -49,6 +49,11 @@
 	margin-top: 0;
 	font-weight: 800;
 }
+
+.work-sans {
+	font-family: "Work Sans", sans-serif;
+}
+
 .description {
 	font-family: "Work Sans", sans-serif;
 	max-width: 400px;
