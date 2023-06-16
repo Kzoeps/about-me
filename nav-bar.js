@@ -20,6 +20,9 @@ const css = `
         .nav a:hover {
             color: cornflowerblue;
         }
+        .active-underline {
+            text-decoration: underline;
+        }
     </style>
 `
 const template = document.createElement('template');
@@ -27,9 +30,10 @@ template.innerHTML = `
     ${css}
     <nav class="nav-container">
         <ul class="nav">
-            <li><a href="index.html">About</a></li>
-            <li><a href="index.html">Projects</a></li>
-            <li><a href="index.html">Resume</a></li>
+            <li id="about"><a href="index.html">About</a></li>
+            <li id="projects"><a href="index.html">Projects</a></li>
+            <li id="til"><a href="til.html">TIL</a></li>
+            <li id="resume"><a href="index.html">Resume</a></li>
         </ul>
     </nav>
 `
@@ -38,6 +42,17 @@ class NavBar extends HTMLElement {
     connectedCallback() {
         const shadow = this.attachShadow({mode: 'closed'});
         shadow.appendChild(template.content.cloneNode(true));
+    }
+
+    static get observedAttributes() {
+        return ["active-page"];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === "active-page") {
+            oldValue && template.content.getElementById(oldValue).classList.remove("active-underline");
+            newValue && template.content.getElementById(newValue).classList.add("active-underline");
+        }
     }
 }
 
