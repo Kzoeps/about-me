@@ -31,9 +31,9 @@ template.innerHTML = `
     <nav class="nav-container">
         <ul class="nav">
             <li id="about"><a href="index.html">About</a></li>
-            <li id="projects"><a href="index.html">Projects</a></li>
+            <li id="projects"><a href="projects.html">Projects</a></li>
             <li id="til"><a href="til.html">TIL</a></li>
-            <li id="resume"><a href="index.html">Resume</a></li>
+            <li id="resume"><a rel="noreferrer noopener" target="_blank" href="./assets/resume.pdf">Resume</a></li>
         </ul>
     </nav>
 `

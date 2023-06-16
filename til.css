@@ -1,5 +1,9 @@
 .blog-post {
     margin-bottom: 10%;
+    border: 1px solid #000;
+    padding: 19px;
+    background-color: #ffebd3;
+    border-radius: 5px;
 }
 
 .blog-post section p {
@@ -8,6 +12,7 @@
 }
 
 .blog-post section h2 {
+    margin-top: 0;
     margin-bottom: 5px;
 }
 
