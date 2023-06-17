@@ -12,6 +12,10 @@ Well thats it for the motive behind this blog and also what tech-stack its using
 
 ## WebComponents: A rundown
 
+I wanted to use web-components since I'd heard of it a lot and because it was also a native way to write components.
+
+The biggest pain point of going vanilla `HTML` for me is the copy pasting that I need to do. For example initially the nav bar for this was copy pasted for the 2 pages I had. 
+
 ```js
 foo();
 HelloWorld();
