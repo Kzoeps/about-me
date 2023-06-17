@@ -24,40 +24,25 @@
     />
     <meta name="twitter:image" content="https://i.imgur.com/4zsA2l0.png" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="til.css" />
-    <script src="nav-bar.js" type="module"></script>
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../til.css" />
+    <link rel="stylesheet" href="../prism.css" />
+    <script src="../nav-bar.js" type="module"></script>
+    <script src="../prism.js" defer></script>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
   </head>
   <body class="parent">
     <nav-bar active-page="til"></nav-bar>
     <div style="margin: auto; max-width: 34rem">
       <div class="work-sans">
-        <h1>Today I Learned</h1>
-        <div style="display: flex; gap: 30px">
-          <div class="avatar">
-            <img width="70px" src="images/avatar.jpeg" />
-          </div>
-          <p>
-            A collection of learnings, blogs, 30 second reads, and what I find interesting 
-          </p>
-        </div>
-        <div style="margin-top: 5%">
-          <a class="blog-post-link" href="./posts/nav-web-components.html">
-            <article class="blog-post">
-              <section>
-                <h2>Using WebComponents to make a nav-bar</h2>
-                <p class="mono-space">
-                  Exploring web-components and the process of creating a vanilla
-                  personal site.
-                </p>
-              </section>
-              <footer class="mt-10 mono-space">
-                <time datetime="2023-06-16" class="verdana"
-                  >June 16th, 2023</time
-                >
-              </footer>
-            </article>
-          </a>
+        <h1>Using WebComponents to make a nav-bar</h1>
+        <time datetime="2023-06-16" class="mono-space">June 16th, 2023</time>
+        <br/>
+        <br/>
+        <div markdown="1" class="mono-space fsi-14">
+            <md-block src="../posts-md/nav-web-component.md">
+                Sorry we couldn't find the post for this
+            </md-block>
         </div>
       </div>
     </div>

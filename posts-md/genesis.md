@@ -114,3 +114,5 @@ And this is the HTML:
 ```html
     <nav-bar active-page="about"></nav-bar>
 ```
+
+*PS: One thing Im annoyed by my web-component is that I use this extension called vimium and weirdly it doesn't seem to recognize the links when its built with my web-component*
