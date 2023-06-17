@@ -4,12 +4,17 @@
     padding: 19px;
     background-color: #ffebd3;
     border-radius: 5px;
+    height: 93px;
 }
 
 .blog-post-link {
     text-decoration: none;
     color: inherit;
     display: block;
+}
+
+.blog-header {
+    height: 68px;
 }
 
 .blog-post section p {
