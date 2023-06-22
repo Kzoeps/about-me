@@ -4,7 +4,7 @@
     padding: 19px;
     background-color: #ffebd3;
     border-radius: 5px;
-    height: 93px;
+    min-height: 93px;
 }
 
 .blog-post-link {
@@ -14,7 +14,7 @@
 }
 
 .blog-header {
-    height: 68px;
+    min-height: 68px;
 }
 
 .blog-post section p {
