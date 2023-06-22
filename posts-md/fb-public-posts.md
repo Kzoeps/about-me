@@ -8,11 +8,11 @@ And the next counsel of advisors I hit up was reddit. There wasn't much informat
 
 When I first looked at the API responses I was paralyzed. The responses looked gibberish and I thought it might be like google's network responses which are so hard to decipher. For context the network calls and responses look something like this:
 
-![facebook network calls](/images/network-calls.png "Network Calls")
+<img src="/images/network-calls.png" width="900" alt="facebook network calls"/>
 
 While I was scrolling through the feed, I found this API that was hit again and again and I suspected it might be the posts.
 
-![facebook feed api call](/images/feed-api.png "Feed API")
+<img src="/images/feed-api.png" width="900" alt="facebook feed api call"/>
 
 Upon looking at the data though I got discouraged. The pic below is what I meant by the responses looking gibberish.
 
