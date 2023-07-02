@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Posties</title>
+    <script type="module" src="./posties.js"></script>
+    <style>
+        .post-container {
+            background-color: rgb(255, 218, 98);
+            width: 200px;
+            height: 250px;
+            box-shadow: 4px 9px 20px -0px rgba(20,19,20,0.5);
+            position: absolute;
+            overflow: auto;
+            padding: 13px;
+        }
+        .post-container:focus {
+            outline: none;
+        }
+        .post-delete {
+            position: absolute;
+            left: 199px;
+            top: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container" id="posty" contenteditable="true">
+        <button class="post-delete" contenteditable="false">x</button>
+        Write whatever you want here
+    </div>
+    <post-marks></post-marks>
+    <script type="module">
+    </script>
+</body>
