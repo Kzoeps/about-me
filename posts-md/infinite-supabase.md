@@ -6,8 +6,7 @@ And I also want an infinite pagination for the listing. The tricky part was know
 
 This is the infinite pagination query from the react-query-docs.
 
-```ts
-
+```js
 const {
     data,
     error,
@@ -26,7 +25,7 @@ And whatever you return in `getNextPageParam` this will be the `pageParam` you g
 
 My supabase query at this point looked something like this
 
-```ts
+```js
 const fetchRentals = async () => {
     supabase.from('listings').select()
 }
@@ -34,7 +33,7 @@ const fetchRentals = async () => {
 
 I needed to configure this with pagination using the page param and so the query ended up looking something like this
 
-```ts
+```js
 const fetchRentals = async (pageParam: number) => {
     const PAGE_SIZE = 5
     const from = pageParam * PAGE_SIZE
@@ -45,7 +44,7 @@ const fetchRentals = async (pageParam: number) => {
 
 Okay great, I implemented the supabase function and after which I implemented the getNextPageParam function. I got this code from somewhere but I forget where. After implementing it looked something like this
 
-```ts
+```js
 const {
     data,
     error,
@@ -69,7 +68,7 @@ For the filter I had a form which had the fields `minRent`, `maxRent`, `size`,`l
 
 QueryKeys in react-query is actually an array. and `projects` get converted to `['projects']`. And you can also add other things to the array. Say any params we use can be added to this: `['projects', anyParamHere]` and this is passed on to the function we have in useInfiniteQuery. At this point I had also created the form using react-hook-form:
 
-```ts
+```js
 const init = {minRent: '' , maxRent: '', size: '', location: ''}
 const {getValues} = useForm({defaultValues: init})
 const {
@@ -90,12 +89,10 @@ const {
 I wanted to set up the queryKeys such that it also took the form and everytime the form changed I wanted the infinite query to run.
 
 So I set it up like this:
-```ts
+```js
 const init = {minRent: '' , maxRent: '', size: '', location: ''}
 const {getValues} = useForm({defaultValues: init})
 const [form, setForm] = useState(getValues())
-// does it run because its set to state or because it knows its changing?
-// try using a ref in this to see if it still works
 const {
     data,
     error,
@@ -112,7 +109,7 @@ const {
 ```
 
 And updated the supabase fetch call to use the form to build up the query instead of executing it at once
-```ts
+```js
 const fetchRentals = async (pageParam: number, { minRent, maxRent, size, location}) => {
     const PAGE_SIZE = 5
     const from = pageParam * PAGE_SIZE
@@ -129,3 +126,25 @@ const fetchRentals = async (pageParam: number, { minRent, maxRent, size, locatio
     return query
 }
 ```
+
+While writing the blog I wanted to check if it could work using a ref instead of a state value since I dont use it for rendering purposes and it seems to work. Updated code:
+```js
+const init = {minRent: '' , maxRent: '', size: '', location: ''}
+const {getValues} = useForm({defaultValues: init})
+const form = useRef(form)
+const {
+    data,
+    error,
+    hasNextPage,
+    fetchNextPage,
+  } = useInfiniteQuery(['projects',form.current],async ({pageParam = 0}) => fetchProjects(pageParam, form.current), {
+    getNextPageParam: (lastPage, pages) => {
+        if (lastPage.length < 5) {
+            return undefined
+        }
+        return pages.length + 1
+    },
+  })
+```
+
+I have it set up such that when the user hits the apply button i set the form vals to be whatever the user entered.
