@@ -1,8 +1,10 @@
 I've been furiously working on zimchu.com. A rental listing site for apartments in Thimphu. I ended up using supabase for it and also used react-query for all of the fetch stuff.
 
-One of the features I want to build for this platform is a filter feature. Because the current listings on facebook aren't the best for filtering data. I wanted to create a more organized way of doing this.
+The biggest assumption I'm making for this project is that people want a more organized and easily searchable data for house listings. So a filter feature is a must have for the mvp. 
 
-And I also want an infinite pagination for the listing. The tricky part was knowing how to combine the filter process with the infinite query. `react-query` has an infinite pagination hook already and it was easy to configure for a simple infinite pagination listing.
+I wanted an infinite scroll for the rental listing page. `react-query` already has hooks and examples for infinite pagination so that made the initial setup relatively easy. The confusing portion was trying to combine the filter form with the infinite pagination.
+
+## Infinite Pagination Setup
 
 This is the infinite pagination query from the react-query-docs.
 
@@ -17,11 +19,9 @@ const {
   })
 ```
 
-I needed to implement the fetching of next page param and has next page with supabase, instead of a normal fetch API described in the docs.
+Most of it was copy pasta except configuring the `nextPageParam` and `hasNextPage` with supabase. The docs, quite rightfully, show it for actual BE APIs.
 
-The `hasNextPage` variable is decided by the `getNextPageParam` function. where if you return anything that is `undefined` then `hasNextPage` will be false.
-
-And whatever you return in `getNextPageParam` this will be the `pageParam` you get in the function you provide to `useInfiniteQuery`.
+The `getNextPageParam` decides both `pageParam` and `hasNextPage` variables. If you return undefined in `getNextPageParam` it sets `hasNextPage` to false. If you return anything other than undefined it gets passed to your fetch function as pageParam.
 
 My supabase query at this point looked something like this
 
@@ -31,8 +31,7 @@ const fetchRentals = async () => {
 }
 ```
 
-I needed to configure this with pagination using the page param and so the query ended up looking something like this
-
+I needed to change supabase query to implement pagination using pageParam and it looked something like this 
 ```js
 const fetchRentals = async (pageParam: number) => {
     const PAGE_SIZE = 5
@@ -42,7 +41,9 @@ const fetchRentals = async (pageParam: number) => {
 }
 ```
 
-Okay great, I implemented the supabase function and after which I implemented the getNextPageParam function. I got this code from somewhere but I forget where. After implementing it looked something like this
+Okay great! At this point I had set up pagination for supabase and it was quite smooth sailing. Then I moved on to implementing `getNextPageParam` function so that it would automatically load more listings once the user is at the end of the page 
+
+The code looked something like this. This was also quite straightforward other than the part where I had to figure out I needed to return undefined if theres no more data. That just took time reading the docs though.
 
 ```js
 const {
@@ -51,22 +52,28 @@ const {
     hasNextPage,
     fetchNextPage,
   } = useInfiniteQuery('projects',async ({pageParam = 0}) => fetchProjects(pageParam), {
+    // lastPage is the result of the last fetch call
     getNextPageParam: (lastPage, pages) => {
+      // 5 because i set the pagination result limit to 5, if less than 5 i know theres no more data
         if (lastPage.length < 5) {
             return undefined
         }
+        // otherwise i return this, which is the pageParam
         return pages.length + 1
     },
   })
 ```
+*initally `pageParam` will be undefined so you have to set it to zero for the initial query*
 
-Also initally `pageParam` will be undefined so you have to set it to zero for the initial query.
+## Filter and Infinite Pagination
 
-Great I implemented basic infinite query listing with supabase and react-query but now I had the tricky part of setting it up with the filters. I wanted to make sure that everytime I set a filter, the pageParam reset to zero.
+Great! I implemented basic infinite query listing with supabase and react-query but now I had the tricky part of setting it up with the filters. I wanted to make sure that everytime I set a filter, the pageParam reset to zero and the supabase call was executed with the filters otherwise this would be useless.
 
 For the filter I had a form which had the fields `minRent`, `maxRent`, `size`,`location`.
 
-QueryKeys in react-query is actually an array. and `projects` get converted to `['projects']`. And you can also add other things to the array. Say any params we use can be added to this: `['projects', anyParamHere]` and this is passed on to the function we have in useInfiniteQuery. At this point I had also created the form using react-hook-form:
+The key to implementing this was with how QueryKeys worked(pun intended). QueryKeys get converted to arrays and in the above case `projects` string in `useInfiniteQuery` gets converted to `['projects']`. And you can also add other things to the array. Say any params we use can be added to this: `['projects', anyParamHere]` and this is passed on to the function we have in useInfiniteQuery. 
+
+The form is build using react-hook-form.
 
 ```js
 const init = {minRent: '' , maxRent: '', size: '', location: ''}
