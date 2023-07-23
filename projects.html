@@ -1,108 +1,138 @@
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<script async src="https://analytics.umami.is/script.js" data-website-id="9f7abacd-3717-486c-a3b5-27e42ebaa77e"></script>
-		<meta property="og:title" content="Kzoeps's website"/>
-		<meta property="og:type" content="website"/>
-		<meta property="og:description" content="Kuzu Kuzu, heres my list of projects if you're curious"/>
-		<meta property="og:image" content="https://i.imgur.com/4zsA2l0.png"/>
-		<meta property="og:image:width" content="450"/>
-		<meta property="og:image:height" content="300"/>
-		<meta property="og:image:alt" content="A range of things from buddhism, to karma(indentifying me)"/>
-		<meta name="twitter:card" content="summary_large_image"/>
-		<meta name="twitter:creator" content="@kzoeps"/>
-		<meta name="twitter:title" content="Kzoeps's website"/>
-		<meta name="twitter:description" content="Kuzu Kuzu, heres my portfolio if you're curious"/>
-		<meta name="twitter:image" content="https://i.imgur.com/4zsA2l0.png"/>
-		<title>kzoeps | projects</title>
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<script
-			async
-			src="https://kit.fontawesome.com/d0a44e439a.js"
-			crossorigin="anonymous"
-		></script>
-		<script src="nav-bar.js" type="module"></script>
-	</head>
-	<link rel="stylesheet" href="index.css" />
-	<link rel="stylesheet" href="projects.css" />
-	<body class="parent">
-		<nav-bar active-page="projects"></nav-bar>
-		<main class="project-content">
-			<div class="project-content-sub">
-				<ol>
-					<li class="work-sans project-li">
-						<div class="title-container">
-							<a rel="noreferrer noopener" target="_blank" href="https://mbox.kongtsey.com" class="title-container">
-								<h3>Mbox</h3>
-								<i class="fa-solid fa-arrow-up-right-from-square"></i>
-							</a>
-						</div>
-						<div class="project-description">
-							<p>
-								Mbox is an app to automate Mbob record keeping. Quickly take a picture of a transaction and we'll pick up all the required info and save it in our database. You can view all of your saved records and reference them any time.	
-							</p>
-						</div>
-					</li>
-					<li class="work-sans project-li">
-						<div class="title-container">
-							<a rel="noreferrer noopener" target="_blank" href="https://hacket.vercel.app/" class="title-container">
-								<h3>Cert-tainty</h3>
-								<i class="fa-solid fa-arrow-up-right-from-square"></i>
-							</a>
-						</div>
-						<div class="project-description">
-							<p>
-								We've (JTN and I) always been fascinated with Web3, its applications and building with Web3.
-								NFTs being, well, non fungible we thought we could use this to circumvent the problem of fake certificates (basically to stop the plot in Bong Joon Ho's parasite). Our portal allows colleges to sign up, provide information about degree certificates and we generate the certificate and NFT for them. We also provide a paper certificate with a qr-code to easily verify the authenticity and details of the certificate.
-							</p>
-						</div>
-					</li>
-					<li class="work-sans project-li">
-						<div class="title-container">
-								<h3>Laktaa(app listing removed)</h3>
-						</div>
-						<div class="project-description">
-							<p>
-								Laktaa is a peer to peer delivery application built to bridge
-								the gap between truckers, farmers and vegetable vendors. Built
-								using react-native and firebase, this was a freelance project we
-								(my brother and I) finished in 4 months.
-								<br/> <em>Note the app is only available in Bhutan and India</em>
-							</p>
-						</div>
-					</li>
-					<li class="work-sans project-li">
-						<div class="title-container">
-							<a rel="noreferrer noopener" target="_blank" href="https://www.npmjs.com/package/chakra-formik" class="title-container">
-								<h3>Chakra-formik</h3>
-								<i class="fa-solid fa-arrow-up-right-from-square"></i>
-							</a>
-						</div>
-						<div class="project-description">
-							<p>
-								I really like using chakra-ui. And I also like using formik for forms in react. So I created a package which binds chakra forms with formik without having to repeat myself everytime I start a new project. Also was a playground for me to learn unit testing.
-							</p>
-						</div>
-					</li>
-					<li class="work-sans project-li">
-						<div class="title-container">
-							<a rel="noreferrer noopener" target="_blank" href="https://kongtsey.com/" class="title-container">
-								<h3>Kongtsey</h3>
-								<i class="fa-solid fa-arrow-up-right-from-square"></i>
-							</a>
-						</div>
-						<div class="project-description">
-							<p>
-								Kongtsey is Bhutan's first online RCSE (civil service entrance
-								examination) preparation site. With 650+ users
-								from 13 different colleges, it has been a rewarding experience
-								helping and impacting others. Our platform helps users identify
-								their weaknesses and prepare for them specifically. I admit the <code>code</code> for this project is very messy but hey this was like my first serious project.
-							</p>
-						</div>
-					</li>
-				</ol>
-			</div>
-		</main>
-	</body>
+
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script async src="https://analytics.umami.is/script.js"
+		data-website-id="9f7abacd-3717-486c-a3b5-27e42ebaa77e"></script>
+	<meta property="og:title" content="Kzoeps's website" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Kuzu Kuzu, heres my list of projects if you're curious" />
+	<meta property="og:image" content="https://i.imgur.com/4zsA2l0.png" />
+	<meta property="og:image:width" content="450" />
+	<meta property="og:image:height" content="300" />
+	<meta property="og:image:alt" content="A range of things from buddhism, to karma(indentifying me)" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@kzoeps" />
+	<meta name="twitter:title" content="Kzoeps's website" />
+	<meta name="twitter:description" content="Kuzu Kuzu, heres my portfolio if you're curious" />
+	<meta name="twitter:image" content="https://i.imgur.com/4zsA2l0.png" />
+	<title>kzoeps | projects</title>
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+	<script async src="https://kit.fontawesome.com/d0a44e439a.js" crossorigin="anonymous"></script>
+	<script src="nav-bar.js" type="module"></script>
+	<script src="project-li.js" type="module"></script>
+</head>
+<link rel="stylesheet" href="index.css" />
+<link rel="stylesheet" href="projects.css" />
+
+<body class="parent">
+	<nav-bar active-page="projects"></nav-bar>
+	<main class="project-content">
+		<div class="project-content-sub">
+			<ol>
+				<project-li project-link="https://www.zimchu.com">
+					<span slot="header" class="title-container">
+						<h3>Zimchu</h3>
+						<i class="fa-solid fa-arrow-up-right-from-square"></i>
+					</span>
+					<p slot="description">
+						Thimphu apartment listing mostly happens on facebook. While trying to build this project I realized the massive amount of gunk in these pages.
+						<br/>
+						Zimchu scrapes data from multiple groups and pages and displays them in an organized and easily searchable manner. Users can also post their aparment listing on the website
+						<br/>
+						<i>Looks pretty on mobile not on desktop</i>
+					</p>
+				</project-li>
+				<li class="work-sans project-li">
+					<div class="title-container">
+						<a rel="noreferrer noopener" target="_blank" href="https://mbox.kongtsey.com"
+							class="title-container">
+							<h3>Mbox (Product Sunset)</h3>
+							<i class="fa-solid fa-arrow-up-right-from-square"></i>
+						</a>
+					</div>
+					<div class="project-description">
+						<p>
+							<i>Product sunset after discussing with ashima. Not production ready, not fast enough lo so
+								maybe come back to this atsi AI ko lay sheb dha. But currently lack the chops for it</i>
+							<br />
+							Mbox is an app to automate Mbob record keeping. Quickly take a picture of a transaction and
+							we'll pick up all the required info and save it in our database. You can view all of your
+							saved records and reference them any time.
+						</p>
+					</div>
+				</li>
+				<li class="work-sans project-li">
+					<div class="title-container">
+						<a rel="noreferrer noopener" target="_blank" href="https://hacket.vercel.app/"
+							class="title-container">
+							<h3>Cert-tainty</h3>
+							<i class="fa-solid fa-arrow-up-right-from-square"></i>
+						</a>
+					</div>
+					<div class="project-description">
+						<p>
+							We've (JTN and I) always been fascinated with Web3, its applications and building with Web3.
+							NFTs being, well, non fungible we thought we could use this to circumvent the problem of
+							fake certificates (basically to stop the plot in Bong Joon Ho's parasite). Our portal allows
+							colleges to sign up, provide information about degree certificates and we generate the
+							certificate and NFT for them. We also provide a paper certificate with a qr-code to easily
+							verify the authenticity and details of the certificate.
+						</p>
+					</div>
+				</li>
+				<li class="work-sans project-li">
+					<div class="title-container">
+						<h3>Laktaa(app listing removed)</h3>
+					</div>
+					<div class="project-description">
+						<p>
+							Laktaa is a peer to peer delivery application built to bridge
+							the gap between truckers, farmers and vegetable vendors. Built
+							using react-native and firebase, this was a freelance project we
+							(my brother and I) finished in 4 months.
+							<br /> <em>Note the app is only available in Bhutan and India</em>
+						</p>
+					</div>
+				</li>
+				<li class="work-sans project-li">
+					<div class="title-container">
+						<a rel="noreferrer noopener" target="_blank" href="https://www.npmjs.com/package/chakra-formik"
+							class="title-container">
+							<h3>Chakra-formik</h3>
+							<i class="fa-solid fa-arrow-up-right-from-square"></i>
+						</a>
+					</div>
+					<div class="project-description">
+						<p>
+							I really like using chakra-ui. And I also like using formik for forms in react. So I created
+							a package which binds chakra forms with formik without having to repeat myself everytime I
+							start a new project. Also was a playground for me to learn unit testing.
+						</p>
+					</div>
+				</li>
+				<li class="work-sans project-li">
+					<div class="title-container">
+						<a rel="noreferrer noopener" target="_blank" href="https://kongtsey.com/"
+							class="title-container">
+							<h3>Kongtsey</h3>
+							<i class="fa-solid fa-arrow-up-right-from-square"></i>
+						</a>
+					</div>
+					<div class="project-description">
+						<p>
+							Kongtsey is Bhutan's first online RCSE (civil service entrance
+							examination) preparation site. With 650+ users
+							from 13 different colleges, it has been a rewarding experience
+							helping and impacting others. Our platform helps users identify
+							their weaknesses and prepare for them specifically. I admit the <code>code</code> for this
+							project is very messy but hey this was like my first serious project.
+						</p>
+					</div>
+				</li>
+			</ol>
+		</div>
+	</main>
+</body>
+
 </html>
