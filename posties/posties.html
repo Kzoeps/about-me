@@ -1,34 +1,77 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <title>Posties</title>
-    <script type="module" src="./posties.js"></script>
     <style>
         .post-container {
             background-color: rgb(255, 218, 98);
-            width: 200px;
-            height: 250px;
-            box-shadow: 4px 9px 20px -0px rgba(20,19,20,0.5);
-            position: absolute;
+            /* width: 200px; */
+            /* height: 250px; */
+            box-shadow: 4px 9px 20px -0px rgba(20, 19, 20, 0.5);
+            /* position: absolute; */
             overflow: auto;
             padding: 13px;
         }
+
         .post-container:focus {
             outline: none;
         }
+
         .post-delete {
             position: absolute;
             left: 199px;
             top: 1px;
         }
     </style>
+    <script>
+        const posties = {
+            "124": "post bay bay wa gi bay mi tshu bae<div><br></div><div>ga chi ben na ngi mi tshay dhi gi gadhay bay bay ru</div><div><i><br></i></div><div><i>trust in me and you shall</i> <b>see</b><br></div><div><b><br></b></div><div><b>and there you go&nbsp;trust in me and you shall see</b>&nbsp;people this is rich text fomratting</div><div><br></div>"
+        }
+        const init_id = 123
+        function addPost(id = undefined, text = "") {
+            const container = document.getElementById("container")
+            const post_id = id ?? init_id + 1;
+            const post = document.createElement("div")
+            post.classList.add("post-container")
+            post.setAttribute("contenteditable", "true")
+            post.setAttribute("id", post_id)
+            post.innerHTML = text
+            let save_post = setTimeout(() => console.log("initial save post"), 3000)
+            post.addEventListener("input", (event) => {
+                clearTimeout(save_post)
+                save_post = setTimeout(() => {
+                    const post_id = event.target.id
+                    posties[post_id] = event.target.innerHTML
+                    console.log(posties)
+                    console.log("saved post, content: ", event.target.innerHTML)
+                }, 1000)
+            })
+            container.appendChild(post)
+        }
+
+        const savePost = (id, text) => {
+            posties.push({ id, text })
+        }
+        // document.getElementById("posty").addEventListener("input", (event) => {
+        //     debugger; xvxv
+        //     console.log(event.target.innerHTML)
+        // })
+    </script>
 </head>
+
 <body>
-    <div class="post-container" id="posty" contenteditable="true">
-        <button class="post-delete" contenteditable="false">x</button>
-        Write whatever you want here
-    </div>
-    <post-marks></post-marks>
-    <script type="module">
+    <article id="container">
+        <button onclick="addPost()">Add Post</button>
+    </article>
+    <!-- <div class="post-container" id="posty" contenteditable="true">
+        Some men talk with stones, and some sleep with other men. Go figure.
+        --Murakami
+    </div> -->
+
+    <script>
+        Object.entries(posties).forEach(([id, text]) => {
+            addPost(id, text)
+        })
     </script>
 </body>
