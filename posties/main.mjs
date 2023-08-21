@@ -39,7 +39,6 @@ function handleMouseDown(event) {
 function handleDebouncerSetup(id) {
   debouncers[id] = debounce((id, content, left, top) => {
     posties[id] = { ...posties[id], content, left, top };
-    console.log(posties)
   }, 3000);
 }
 
