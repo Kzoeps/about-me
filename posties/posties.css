@@ -1,0 +1,21 @@
+.round-button {
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    position: absolute;
+    z-index: 100;
+    bottom: 10px;
+    right: 10px;
+}
+
+.glass-effect {
+    background: #ffe5e5;
+    box-shadow: 0 8px 32px 0 rgb(129 0 0 / 37%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}

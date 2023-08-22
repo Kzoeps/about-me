@@ -1,4 +1,4 @@
-import { debounce, getId } from "./utils.mjs";
+import { getRandomRotation, debounce, getId } from "./utils.mjs";
 
 const newPosties = new Set();
 const posties = {};
@@ -15,6 +15,7 @@ function createPostElement(postId, content, left, top) {
   const postElement = document.createElement("div");
   postElement.setAttribute("contenteditable", "true");
   postElement.setAttribute("id", postId);
+  postElement.style.transform = `rotate(${getRandomRotation()}deg)`;
   postElement.classList.add("post-container");
   postElement.innerHTML = content;
   postElement.style.left = `${left}px`;
