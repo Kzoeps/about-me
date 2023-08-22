@@ -1,15 +1,7 @@
 import { debounce, getId } from "./utils.mjs";
 
 const newPosties = new Set();
-// dummy data
-const posties = {
-  123: {
-    content:
-      "post bay bay wa gi bay mi tshu bae<div><br></div><div>ga chi ben na ngi mi tshay dhi gi gadhay bay bay ru</div><div><i><br></i></div><div><i>trust in me and you shall</i> <b>see</b><br></div><div><b><br></b></div><div><b>and there you go&nbsp;trust in me and you shall see</b>&nbsp;people this is rich text fomratting</div><div><br></div>",
-    left: 0,
-    top: 0,
-  },
-};
+const posties = {};
 
 /* for each post need to make its own debouncer since other wise if you move 2 posts it cancels out the setTimeout resulting in only one call being triggered */
 const debouncers = {};
@@ -42,9 +34,14 @@ function isNewAndEmpty(id,content) {
 }
 
 function handleDebouncerSetup(id) {
-  debouncers[id] = debounce((id, content, left, top) => {
+  debouncers[id] = debounce(async (id, content, left, top) => {
     if (isNewAndEmpty(id, content)) return;
     posties[id] = { ...posties[id], content, left, top };
+    await fetch(`/api/create-posty`, {
+      method: "POST",
+      headers: {  "Content-Type": "application/json" },
+      body: JSON.stringify({ ...posties[id], id})
+    })
     newPosties.delete(id);
   }, 1000);
 }
@@ -128,8 +125,12 @@ async function getPosties() {
   const ids = await getPostiesIds();
   const promises = getPostiesPromises(ids);
   const res = await Promise.allSettled(promises);
-  const posties = await Promise.all(res.map(async (promise) => await promise.value.json()));
-  console.log(posties);
+  const arrayedPosties = await Promise.all(res.map(async (promise) => await promise.value.json()));
+  arrayedPosties.reduce((acc, post) => {
+    acc[post.id] = post;
+    return acc;
+  }, posties);
+  drawPosts(posties);
 }
 
 
@@ -138,5 +139,4 @@ document.addEventListener("mouseup", () => {
 });
 document.getElementById("postAdder").addEventListener("click", () => handleAddPost());
 document.addEventListener("mousemove", handlePostMove);
-drawPosts(posties);
 getPosties();

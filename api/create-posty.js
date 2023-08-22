@@ -8,5 +8,5 @@ export default async function handler(request) {
   const id = data.id
   await kv.sadd('posties', id)
   await kv.hset(`posties:${id}`, { id, content: data.content, left: data.left, top: data.top } )
-  return new Response('', {status:200});
+  return new Response('success', {status:200});
 }
