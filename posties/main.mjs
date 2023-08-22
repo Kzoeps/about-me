@@ -1,5 +1,6 @@
 import { debounce, getId } from "./utils.mjs";
 
+const newPosties = new Set();
 // dummy data
 const posties = {
   123: {
@@ -36,14 +37,27 @@ function handleMouseDown(event) {
   mousePositionY = event.clientY;
 }
 
+function isNewAndEmpty(id,content) {
+  return newPosties.has(id) && content === "";
+}
+
 function handleDebouncerSetup(id) {
   debouncers[id] = debounce((id, content, left, top) => {
+    if (isNewAndEmpty(id, content)) return;
     posties[id] = { ...posties[id], content, left, top };
-  }, 3000);
+    newPosties.delete(id);
+  }, 1000);
+}
+
+function shouldIAddToNewPosties(id, postId) {
+  if (!id) {
+    newPosties.add(postId);
+  }
 }
 
 function createPost(id = undefined, properties = {}) {
   const postId = id || getId();
+  shouldIAddToNewPosties(id, postId);
   const { content = "", left = 0, top = 0 } = properties;
   const postElement = createPostElement(postId, content, left, top);
   postElement.addEventListener("mousedown", handleMouseDown);
@@ -100,6 +114,24 @@ function handlePostMove(event) {
   }
 }
 
+async function getPostiesIds() {
+  const res = await fetch("/api/get-posties")
+  const ids = await res.json();
+  return ids;
+}
+
+function getPostiesPromises(ids) {
+  return ids.map((id) => fetch(`/api/get-posty`, {method: "POST", body: JSON.stringify({id}), headers: {'Content-Type': 'application/json'}}))
+}
+
+async function getPosties() {
+  const ids = await getPostiesIds();
+  const promises = getPostiesPromises(ids);
+  const res = await Promise.allSettled(promises);
+  const posties = await Promise.all(res.map(async (promise) => await promise.value.json()));
+  console.log(posties);
+}
+
 
 document.addEventListener("mouseup", () => {
   isMouseDown = false;
@@ -107,3 +139,4 @@ document.addEventListener("mouseup", () => {
 document.getElementById("postAdder").addEventListener("click", () => handleAddPost());
 document.addEventListener("mousemove", handlePostMove);
 drawPosts(posties);
+getPosties();

@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vercel/kv": "^0.2.2"
+    "@vercel/kv": "^0.2.2",
+    "next": "^13.4.19"
   }
 }
