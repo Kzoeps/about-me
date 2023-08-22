@@ -25,9 +25,14 @@
         }
     </style>
     <script type="module" src="./main.mjs"></script>
+    <script type="module" src="/nav-bar.js"></script>
+    <link rel="stylesheet" href="/index.css" />
 </head>
 
-<body>
+<body class="parent">
+    <nav>
+        <nav-bar active-page="posties"></nav-bar>
+    </nav>
     <article id="container">
         <button id="postAdder">Add Post</button>
     </article>
