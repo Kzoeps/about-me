@@ -54,6 +54,14 @@ function shouldIAddToNewPosties(id, postId) {
   }
 }
 
+function getPosition(event, axis){
+  const position = event?.target?.style?.[axis]
+  if (position) {
+    return +position.split('px')[0]
+  }
+  return 0
+}
+
 function createPost(id = undefined, properties = {}) {
   const postId = id || getId();
   shouldIAddToNewPosties(id, postId);
@@ -63,7 +71,7 @@ function createPost(id = undefined, properties = {}) {
   handleDebouncerSetup(postId);
   postElement.addEventListener("input", (event) => {
     const postId = event.target.id;
-    debouncers?.[postId]?.(postId, event.target.innerHTML, left, top);
+    debouncers?.[postId]?.(postId, event.target.innerHTML, getPosition(event, 'left'), getPosition(event, 'top'));
   });
   posties[postId] = { content, left, top };
   return postElement;
