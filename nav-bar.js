@@ -33,8 +33,8 @@ template.innerHTML = `
             <li id="about"><a href="/index.html">About</a></li>
             <li id="projects"><a href="/projects.html">Projects</a></li>
             <li id="til"><a href="/til.html">TIL</a></li>
+            <li id="posties"><a href="/posties">Posties</a></li>
             <li id="resume"><a rel="noreferrer noopener" target="_blank" href="/assets/resume.pdf">Resume</a></li>
-            <li id="posties"><a rel="noreferrer noopener" target="_blank" href="/posties/posties.html">Posties</a></li>
         </ul>
     </nav>
 `

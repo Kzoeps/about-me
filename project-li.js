@@ -4,7 +4,7 @@ template.innerHTML = `
         <link rel="stylesheet" href="projects.css" />
         <li class="work-sans project-li">
 						<div class="title-container">
-							<a rel="noreferrer noopener" target="_blank" href="#" id="link" class="title-container">
+							<a target="_blank" href="#" id="link" class="title-container">
                                 <slot name="header">Guto Here</slot>
 							</a>
 						</div>
