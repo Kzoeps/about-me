@@ -27,6 +27,7 @@
     <script type="module" src="./main.mjs"></script>
     <script type="module" src="/nav-bar.js"></script>
     <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="./loader.css" />
     <link rel="stylesheet" href="./posties.css" />
 </head>
 
@@ -34,6 +35,20 @@
     <nav>
         <nav-bar active-page="posties"></nav-bar>
     </nav>
+    <div id="spinner" class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <article id="container">
         <button class="round-button glass-effect" id="postAdder">
             <span><img src="/images/plus.png" /></span>

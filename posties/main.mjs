@@ -128,6 +128,7 @@ async function getPosties() {
   const promises = getPostiesPromises(ids);
   const res = await Promise.allSettled(promises);
   const arrayedPosties = await Promise.all(res.map(async (promise) => await promise.value.json()));
+  deleteSpinner();
   arrayedPosties.reduce((acc, post) => {
     acc[post.id] = post;
     return acc;
@@ -140,6 +141,11 @@ function checkCreds() {
     const addPostButton = document.getElementById("postAdder"); 
     addPostButton.style.display = "none";
   }
+}
+
+function deleteSpinner() {
+  const spinner = document.getElementById("spinner");
+  spinner.style.display = "none";
 }
 
 
