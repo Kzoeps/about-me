@@ -6,6 +6,14 @@ export const debounce = (func, time) => {
   };
 };
 
+export const hasCreds = () => {
+  return localStorage.getItem("token") !== null;
+}
+
+export const getToken = () => {
+  return localStorage.getItem("token");
+}
+
 export const getId = () => {
   return Math.random().toString(16).slice(2);
 };

@@ -1,4 +1,4 @@
-import { getRandomRotation, debounce, getId } from "./utils.mjs";
+import { getRandomRotation, debounce, getId, hasCreds, getToken } from "./utils.mjs";
 
 const newPosties = new Set();
 const posties = {};
@@ -36,11 +36,12 @@ function isNewAndEmpty(id,content) {
 
 function handleDebouncerSetup(id) {
   debouncers[id] = debounce(async (id, content, left, top) => {
+    if (!hasCreds()) return;
     if (isNewAndEmpty(id, content)) return;
     posties[id] = { ...posties[id], content, left, top };
     await fetch(`/api/create-posty`, {
       method: "POST",
-      headers: {  "Content-Type": "application/json" },
+      headers: {  "Content-Type": "application/json", "Authorization": getToken() },
       body: JSON.stringify({ ...posties[id], id})
     })
     newPosties.delete(id);
@@ -134,10 +135,18 @@ async function getPosties() {
   drawPosts(posties);
 }
 
+function checkCreds() {
+  if (!hasCreds()) {
+    const addPostButton = document.getElementById("postAdder"); 
+    addPostButton.style.display = "none";
+  }
+}
+
 
 document.addEventListener("mouseup", () => {
   isMouseDown = false;
 });
 document.getElementById("postAdder").addEventListener("click", () => handleAddPost());
 document.addEventListener("mousemove", handlePostMove);
+checkCreds();
 getPosties();
