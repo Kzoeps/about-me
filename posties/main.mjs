@@ -1,6 +1,7 @@
 import { getRandomRotation, debounce, getId, hasCreds, getToken } from "./utils.mjs";
 
 const newPosties = new Set();
+let previousPostId;
 const posties = {};
 
 /* for each post need to make its own debouncer since other wise if you move 2 posts it cancels out the setTimeout resulting in only one call being triggered */
@@ -117,6 +118,12 @@ function handlePostMove(event) {
     );
     post.style.left = `${x}px`;
     post.style.top = `${y}px`;
+    post.style.zIndex = 2;
+    if (previousPostId && previousPostId !== activePostId) {
+      const previousPost = document.getElementById(previousPostId);
+      previousPost.style.zIndex = 1;
+    }
+    previousPostId = activePostId;
     debouncers?.[activePostId]?.(activePostId, post.innerHTML, x, y);
   }
 }
