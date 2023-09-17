@@ -1,4 +1,10 @@
-import { getRandomRotation, debounce, getId, hasCreds, getToken } from "./utils.mjs";
+import {
+  getRandomRotation,
+  debounce,
+  getId,
+  hasCreds,
+  getToken,
+} from "./utils.mjs";
 
 const newPosties = new Set();
 let previousPostId;
@@ -27,11 +33,17 @@ function createPostElement(postId, content, left, top) {
 function handleMouseDown(event) {
   isMouseDown = true;
   activePostId = event.target.id;
+  event.target.style.zIndex = 2;
+  if (previousPostId && previousPostId !== activePostId) {
+    const previousPost = document.getElementById(previousPostId);
+    previousPost.style.zIndex = 1;
+  }
+  previousPostId = activePostId;
   mousePositionX = event.clientX;
   mousePositionY = event.clientY;
 }
 
-function isNewAndEmpty(id,content) {
+function isNewAndEmpty(id, content) {
   return newPosties.has(id) && content === "";
 }
 
@@ -42,9 +54,12 @@ function handleDebouncerSetup(id) {
     posties[id] = { ...posties[id], content, left, top };
     await fetch(`/api/create-posty`, {
       method: "POST",
-      headers: {  "Content-Type": "application/json", "Authorization": getToken() },
-      body: JSON.stringify({ ...posties[id], id})
-    })
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: getToken(),
+      },
+      body: JSON.stringify({ ...posties[id], id }),
+    });
     newPosties.delete(id);
   }, 1000);
 }
@@ -55,12 +70,12 @@ function shouldIAddToNewPosties(id, postId) {
   }
 }
 
-function getPosition(event, axis){
-  const position = event?.target?.style?.[axis]
+function getPosition(event, axis) {
+  const position = event?.target?.style?.[axis];
   if (position) {
-    return +position.split('px')[0]
+    return +position.split("px")[0];
   }
-  return 0
+  return 0;
 }
 
 function createPost(id = undefined, properties = {}) {
@@ -72,7 +87,12 @@ function createPost(id = undefined, properties = {}) {
   handleDebouncerSetup(postId);
   postElement.addEventListener("input", (event) => {
     const postId = event.target.id;
-    debouncers?.[postId]?.(postId, event.target.innerHTML, getPosition(event, 'left'), getPosition(event, 'top'));
+    debouncers?.[postId]?.(
+      postId,
+      event.target.innerHTML,
+      getPosition(event, "left"),
+      getPosition(event, "top")
+    );
   });
   posties[postId] = { content, left, top };
   return postElement;
@@ -94,18 +114,17 @@ function drawPosts(posts) {
   });
 }
 
-
 /* some stuff in here because if i kept it as simple as x = current then theres jitter as it instantly moves to the mouse
    so i need to calculate where the mouse was on mousedown and how much it moved after that.
    and after calculating the distance we just add it to the elements x and y position so that there is no jitter and it moves smoothly
 */
-function calculateDistance(currentMouseX, currentMouseY, postLeft, postTop){
+function calculateDistance(currentMouseX, currentMouseY, postLeft, postTop) {
   const x = currentMouseX - mousePositionX;
   const y = currentMouseY - mousePositionY;
   mousePositionX = currentMouseX;
   mousePositionY = currentMouseY;
   return { x: postLeft + x, y: postTop + y };
-};
+}
 
 function handlePostMove(event) {
   if (isMouseDown && activePostId) {
@@ -119,30 +138,34 @@ function handlePostMove(event) {
     post.style.left = `${x}px`;
     post.style.top = `${y}px`;
     post.style.zIndex = 2;
-    if (previousPostId && previousPostId !== activePostId) {
-      const previousPost = document.getElementById(previousPostId);
-      previousPost.style.zIndex = 1;
-    }
     previousPostId = activePostId;
     debouncers?.[activePostId]?.(activePostId, post.innerHTML, x, y);
   }
 }
 
 async function getPostiesIds() {
-  const res = await fetch("/api/get-posties")
+  const res = await fetch("/api/get-posties");
   const ids = await res.json();
   return ids;
 }
 
 function getPostiesPromises(ids) {
-  return ids.map((id) => fetch(`/api/get-posty`, {method: "POST", body: JSON.stringify({id}), headers: {'Content-Type': 'application/json'}}))
+  return ids.map((id) =>
+    fetch(`/api/get-posty`, {
+      method: "POST",
+      body: JSON.stringify({ id }),
+      headers: { "Content-Type": "application/json" },
+    })
+  );
 }
 
 async function getPosties() {
   const ids = await getPostiesIds();
   const promises = getPostiesPromises(ids);
   const res = await Promise.allSettled(promises);
-  const arrayedPosties = await Promise.all(res.map(async (promise) => await promise.value.json()));
+  const arrayedPosties = await Promise.all(
+    res.map(async (promise) => await promise.value.json())
+  );
   deleteSpinner();
   arrayedPosties.reduce((acc, post) => {
     acc[post.id] = post;
@@ -153,7 +176,7 @@ async function getPosties() {
 
 function checkCreds() {
   if (!hasCreds()) {
-    const addPostButton = document.getElementById("postAdder"); 
+    const addPostButton = document.getElementById("postAdder");
     addPostButton.style.display = "none";
   }
 }
@@ -163,11 +186,12 @@ function deleteSpinner() {
   spinner.style.display = "none";
 }
 
-
 document.addEventListener("mouseup", () => {
   isMouseDown = false;
 });
-document.getElementById("postAdder").addEventListener("click", () => handleAddPost());
+document
+  .getElementById("postAdder")
+  .addEventListener("click", () => handleAddPost());
 document.addEventListener("mousemove", handlePostMove);
 checkCreds();
 getPosties();
