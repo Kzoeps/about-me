@@ -9,7 +9,7 @@ const css = `
             list-style: none;
         }
         .nav-container {
-            width: 350px;
+            max-width: 450px;
             margin-left: auto;
         }
         .nav a {
@@ -34,6 +34,7 @@ template.innerHTML = `
             <li id="projects"><a href="/projects.html">Projects</a></li>
             <li id="til"><a href="/til.html">TIL</a></li>
             <li id="posties"><a href="/posties">Posties</a></li>
+            <li id="pensieve"><a href="/pensieve">Pensieve</a></li>
             <li id="resume"><a rel="noreferrer noopener" target="_blank" href="/assets/resume.pdf">Resume</a></li>
         </ul>
     </nav>

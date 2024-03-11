@@ -1,0 +1,25 @@
+.header h1 {
+    margin-bottom: 5px;
+}
+
+.header p {
+    margin-top: 8px;
+}
+
+.article-list {
+    margin-top: 50px;
+    font-family:  sans-serif;
+    list-style: none;
+    padding: 40px;
+}
+
+.article-list a {
+    text-decoration: underline;
+    color: #000;
+}
+
+.article-list li {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
