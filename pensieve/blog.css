@@ -1,0 +1,11 @@
+.article-header {
+    font-family: 'Roboto';
+}
+
+.thoughts {
+    margin: 10px;
+    font-family: math, 'Roboto';
+    font-size: large;
+    line-height: 1.75rem;
+    margin-bottom: 25px;
+}

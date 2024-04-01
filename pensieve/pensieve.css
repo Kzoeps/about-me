@@ -23,3 +23,9 @@
     display: grid;
     grid-template-columns: 100px 1fr;
 }
+
+@media screen and (max-width: 500px) {
+   .article-list {
+    padding: 0;
+   } 
+}
