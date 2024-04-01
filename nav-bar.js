@@ -23,6 +23,11 @@ const css = `
         .active-underline {
             text-decoration: underline;
         }
+        @media screen and (max-width: 500px) {
+            .nav {
+                padding-left: 0;
+            }
+        }
     </style>
 `
 const template = document.createElement('template');
