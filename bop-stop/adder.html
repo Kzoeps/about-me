@@ -108,6 +108,35 @@
         .copy-button:hover {
             background: #1976D2;
         }
+
+        .search-container {
+            margin-bottom: 15px;
+        }
+
+        .search-results {
+            max-height: 200px;
+            overflow-y: auto;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .search-result-item {
+            padding: 8px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-result-item:hover {
+            background: #f0f0f0;
+        }
+
+        .map-container {
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 </head>
 
@@ -131,7 +160,7 @@
             </div>
 
             <div class="form-group">
-                <label>Coordinates (Click on map to set):</label>
+                <label>Coordinates (Click on map or search):</label>
                 <div class="coordinates-display" id="coordinates">Not set</div>
             </div>
 
@@ -151,8 +180,13 @@
         </form>
     </div>
 
-    <div>
-        <h2>Click on Map to Set Location</h2>
+    <div class="map-container">
+        <h2>Set Location</h2>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for a location..."
+                style="width: 100%; margin-bottom: 10px;">
+            <div id="searchResults" class="search-results"></div>
+        </div>
         <div id="map"></div>
     </div>
 
@@ -166,8 +200,8 @@
     <script>
         // Initialize map
         const map = L.map('map').setView([27.5142, 90.4336], 5);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         }).addTo(map);
 
         let marker;
@@ -175,13 +209,70 @@
 
         // Map click handler
         map.on('click', function (e) {
+            setMarker([e.latlng.lat, e.latlng.lng]);
+        });
+
+        function setMarker(coords) {
             if (marker) {
                 map.removeLayer(marker);
             }
-            marker = L.marker(e.latlng).addTo(map);
-            currentCoordinates = [e.latlng.lat, e.latlng.lng];
+            marker = L.marker(coords).addTo(map);
+            currentCoordinates = coords;
             document.getElementById('coordinates').textContent =
-                `[${currentCoordinates[0].toFixed(4)}, ${currentCoordinates[1].toFixed(4)}]`;
+                `[${coords[0].toFixed(4)}, ${coords[1].toFixed(4)}]`;
+            map.setView(coords, map.getZoom());
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        let searchTimeout;
+
+        searchInput.addEventListener('input', function (e) {
+            clearTimeout(searchTimeout);
+            const query = e.target.value;
+
+            if (query.length < 3) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            searchTimeout = setTimeout(() => {
+                fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        searchResults.innerHTML = '';
+                        if (data.length > 0) {
+                            data.forEach(result => {
+                                const div = document.createElement('div');
+                                div.className = 'search-result-item';
+                                div.textContent = result.display_name;
+                                div.addEventListener('click', () => {
+                                    const coords = [parseFloat(result.lat), parseFloat(result.lon)];
+                                    setMarker(coords);
+                                    map.setView(coords, 10);
+                                    searchResults.style.display = 'none';
+                                    searchInput.value = result.display_name;
+                                });
+                                searchResults.appendChild(div);
+                            });
+                            searchResults.style.display = 'block';
+                        } else {
+                            searchResults.style.display = 'none';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        searchResults.style.display = 'none';
+                    });
+            }, 300);
+        });
+
+        // Hide search results when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!searchResults.contains(e.target) && e.target !== searchInput) {
+                searchResults.style.display = 'none';
+            }
         });
 
         // Add song button handler

@@ -12,5 +12,8 @@
   "dependencies": {
     "@vercel/kv": "^0.2.2",
     "next": "^13.4.19"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
   }
 }
