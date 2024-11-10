@@ -9,7 +9,7 @@ const css = `
             list-style: none;
         }
         .nav-container {
-            max-width: 450px;
+            max-width: 650px;
             margin-left: auto;
         }
         .nav a {
@@ -40,6 +40,7 @@ template.innerHTML = `
             <li id="til"><a href="/til.html">TIL</a></li>
             <li id="posties"><a href="/posties">Posties</a></li>
             <li id="pensieve"><a href="/pensieve">Pensieve</a></li>
+            <li id="bop-stop"><a href="/bop-stop">BopStop</a></li>
             <li id="resume"><a rel="noreferrer noopener" target="_blank" href="/assets/resume.pdf">Resume</a></li>
         </ul>
     </nav>
@@ -47,7 +48,7 @@ template.innerHTML = `
 
 class NavBar extends HTMLElement {
     connectedCallback() {
-        const shadow = this.attachShadow({mode: 'closed'});
+        const shadow = this.attachShadow({ mode: 'closed' });
         shadow.appendChild(template.content.cloneNode(true));
     }
 
