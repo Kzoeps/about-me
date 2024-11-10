@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Entry Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .form-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="url"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .songs-container {
+            margin-top: 10px;
+        }
+
+        .song-entry {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .remove-song {
+            background: #f44336;
+        }
+
+        .remove-song:hover {
+            background: #da190b;
+        }
+
+        .output-container {
+            margin-top: 20px;
+            grid-column: span 2;
+        }
+
+        #jsonOutput {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+            resize: vertical;
+        }
+
+        .coordinates-display {
+            margin-top: 10px;
+            font-family: monospace;
+        }
+
+        .copy-button {
+            background: #2196F3;
+            margin-top: 10px;
+        }
+
+        .copy-button:hover {
+            background: #1976D2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Add New Artist</h2>
+        <form id="artistForm">
+            <div class="form-group">
+                <label for="artistName">Artist Name:</label>
+                <input type="text" id="artistName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="markerImage">Marker Image URL:</label>
+                <input type="url" id="markerImage" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cardImage">Card Image URL:</label>
+                <input type="url" id="cardImage" required>
+            </div>
+
+            <div class="form-group">
+                <label>Coordinates (Click on map to set):</label>
+                <div class="coordinates-display" id="coordinates">Not set</div>
+            </div>
+
+            <div class="form-group">
+                <label>Songs:</label>
+                <div id="songsContainer" class="songs-container">
+                    <div class="song-entry">
+                        <input type="text" placeholder="Song name" required>
+                        <input type="url" placeholder="Spotify URL" required>
+                        <button type="button" class="remove-song">×</button>
+                    </div>
+                </div>
+                <button type="button" id="addSong">Add Song</button>
+            </div>
+
+            <button type="submit">Generate JSON</button>
+        </form>
+    </div>
+
+    <div>
+        <h2>Click on Map to Set Location</h2>
+        <div id="map"></div>
+    </div>
+
+    <div class="output-container">
+        <h2>JSON Output</h2>
+        <textarea id="jsonOutput" readonly></textarea>
+        <button class="copy-button" id="copyButton">Copy to Clipboard</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+        // Initialize map
+        const map = L.map('map').setView([27.5142, 90.4336], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        let marker;
+        let currentCoordinates = null;
+
+        // Map click handler
+        map.on('click', function (e) {
+            if (marker) {
+                map.removeLayer(marker);
+            }
+            marker = L.marker(e.latlng).addTo(map);
+            currentCoordinates = [e.latlng.lat, e.latlng.lng];
+            document.getElementById('coordinates').textContent =
+                `[${currentCoordinates[0].toFixed(4)}, ${currentCoordinates[1].toFixed(4)}]`;
+        });
+
+        // Add song button handler
+        document.getElementById('addSong').addEventListener('click', function () {
+            const songEntry = document.createElement('div');
+            songEntry.className = 'song-entry';
+            songEntry.innerHTML = `
+                <input type="text" placeholder="Song name" required>
+                <input type="url" placeholder="Spotify URL" required>
+                <button type="button" class="remove-song">×</button>
+            `;
+            document.getElementById('songsContainer').appendChild(songEntry);
+        });
+
+        // Remove song button handler
+        document.getElementById('songsContainer').addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-song')) {
+                e.target.parentElement.remove();
+            }
+        });
+
+        // Form submit handler
+        document.getElementById('artistForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!currentCoordinates) {
+                alert('Please select a location on the map');
+                return;
+            }
+
+            const songs = [];
+            document.querySelectorAll('.song-entry').forEach(entry => {
+                const inputs = entry.querySelectorAll('input');
+                songs.push({
+                    name: inputs[0].value,
+                    url: inputs[1].value
+                });
+            });
+
+            const artistData = {
+                name: document.getElementById('artistName').value,
+                coordinates: currentCoordinates,
+                markerImage: document.getElementById('markerImage').value,
+                cardImage: document.getElementById('cardImage').value,
+                songs: songs
+            };
+
+            document.getElementById('jsonOutput').value = JSON.stringify(artistData, null, 2);
+        });
+
+        // Copy button handler
+        document.getElementById('copyButton').addEventListener('click', function () {
+            const jsonOutput = document.getElementById('jsonOutput');
+            jsonOutput.select();
+            document.execCommand('copy');
+            this.textContent = 'Copied!';
+            setTimeout(() => {
+                this.textContent = 'Copy to Clipboard';
+            }, 2000);
+        });
+    </script>
+</body>
+
+</html>

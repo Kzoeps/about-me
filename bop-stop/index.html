@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music World Map</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+
+    <!-- MarkerCluster CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css" />
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .custom-popup {
+            max-width: 250px;
+            padding: 10px;
+        }
+
+        .artist-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .artist-info {
+            padding: 15px;
+        }
+
+        .artist-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 0 0 12px 0;
+            color: #333;
+            text-align: center;
+        }
+
+        .song-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .song-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .song-list li:last-child {
+            border-bottom: none;
+        }
+
+        .song-link {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .song-link:hover {
+            color: #1DB954;
+        }
+
+        .leaflet-popup-content-wrapper {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .leaflet-popup-content {
+            margin: 0;
+            width: 250px !important;
+        }
+
+        /* Circular marker styles */
+        .custom-marker {
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-marker img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Pulse animation for markers */
+        .marker-pulse {
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+        .marker-cluster {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .marker-cluster div {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <!-- MarkerCluster JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+
+    <script type="module">
+        import { artists } from './artists.js';
+        // Initialize the map
+        const map = L.map('map').setView([27.5142, 90.4336], 5);
+
+
+        // Add tile layer (using a darker style to make markers pop)
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Initialize marker cluster group
+        const markers = L.markerClusterGroup({
+            maxClusterRadius: 50,
+            spiderfyOnMaxZoom: true,
+            showCoverageOnHover: false,
+            zoomToBoundsOnClick: true
+        });
+
+        // Create custom icon with circular image
+        const createCustomIcon = (imageUrl) => {
+            return L.divIcon({
+                className: 'custom-marker marker-pulse',
+                html: `<img src="${imageUrl}" alt="Artist">`,
+                iconSize: [40, 40]
+            });
+        };
+
+        // Add markers for each artist
+        artists.forEach(artist => {
+            const marker = L.marker(artist.coordinates, {
+                icon: createCustomIcon(artist.markerImage)
+            });
+
+            const popupContent = `
+                <div class="custom-popup">
+                    <div class="artist-card">
+                        <img src="${artist.cardImage}" alt="${artist.name}" style="width:100%; height:150px; object-fit:cover;">
+                        <div class="artist-info">
+                            <h3 class="artist-name">${artist.name}</h3>
+                            <ul class="song-list">
+                                ${artist.songs.map(song => `
+                                    <li>
+                                        <a href="${song.url}" target="_blank" class="song-link">
+                                            ${song.name}
+                                        </a>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            marker.bindPopup(popupContent, {
+                maxWidth: 250,
+                className: 'custom-popup'
+            });
+
+            markers.addLayer(marker);
+        });
+
+        map.addLayer(markers);
+
+    </script>
+</body>
+
+</html>
