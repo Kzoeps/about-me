@@ -544,5 +544,28 @@ export const artists = [
                 "url": "https://www.youtube.com/watch?v=6X1LhSEQbCk"
             }
         ]
+    },
+    {
+        "name": "CRO",
+        "coordinates": [
+            52.510885,
+            13.3989367
+        ],
+        "markerImage": "https://i.scdn.co/image/ab6761610000e5eb8431fb1f7c89e2511c2a790e",
+        "cardImage": "https://i.scdn.co/image/ab6761610000e5eb8431fb1f7c89e2511c2a790e",
+        "songs": [
+            {
+                "name": "Tempo",
+                "url": "https://www.youtube.com/watch?v=xElR7r9njCc&list=RDxElR7r9njCc&start_radio=1"
+            },
+            {
+                "name": "Easy",
+                "url": "https://www.youtube.com/watch?v=4wOoLLDXbDY"
+            },
+            {
+                "name": "Boom",
+                "url": "https://www.youtube.com/watch?v=kb77q-gwr2k"
+            }
+        ]
     }
 ];
