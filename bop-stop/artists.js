@@ -567,5 +567,28 @@ export const artists = [
                 "url": "https://www.youtube.com/watch?v=kb77q-gwr2k"
             }
         ]
+    },
+    {
+        "name": "Natasha Noorani",
+        "coordinates": [
+            31.6656822,
+            74.3141829
+        ],
+        "markerImage": "https://repo.thewildcity.com/7769-natasha-noorani-thumb-photo-credit--zainab-zulfikar.jpg?resize=s400",
+        "cardImage": "https://repo.thewildcity.com/7769-natasha-noorani-thumb-photo-credit--zainab-zulfikar.jpg?resize=s400",
+        "songs": [
+            {
+                "name": "Faltu Pyar",
+                "url": "https://www.youtube.com/watch?v=9mNaNMmxJ1I"
+            },
+            {
+                "name": "Raazi",
+                "url": "https://www.youtube.com/watch?v=ydX8ETYA1f4"
+            },
+            {
+                "name": "Bolo Unhein",
+                "url": "https://www.youtube.com/watch?v=syC_-AEyXgg"
+            }
+        ]
     }
 ];
