@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+
+
+    </style>
+    <link rel="stylesheet" href="/recipes/index.css" />
+    <script src="/nav-bar.js" type="module"></script>
+    <script type="module">
+        const titleCase = (str) => {
+            return str.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+        }
+        const fetchRecipeTitles = async () => {
+            try {
+                const response = await fetch('/recipes/recipes.json')
+                const recipes = await response.json()
+                const recipeTitles = recipes.map(recipe => { return { name: titleCase(recipe.name), created_at: recipe.created_at } })
+                return recipeTitles
+            } catch (error) {
+                console.error(error)
+            }
+        }
+
+        const addRecipesToList = async () => {
+            const recipeTitles = await fetchRecipeTitles()
+            if (recipeTitles) {
+                const recipeList = document.querySelector('.recipe-list')
+                recipeTitles.forEach(({ name, created_at }, index) => {
+                    const recipeEntry = document.createElement('div')
+                    recipeEntry.classList.add('recipe-entry')
+                    const recipeDate = document.createElement('span')
+                    recipeDate.classList.add('recipe-date')
+                    recipeDate.textContent = new Date(created_at).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
+                    const recipeTitle = document.createElement('a')
+                    recipeTitle.classList.add('recipe-title')
+                    recipeTitle.href = `/recipes/${name.toLowerCase().split(' ').join('-')}`
+                    recipeTitle.textContent = name
+                    recipeEntry.appendChild(recipeDate)
+                    recipeEntry.appendChild(recipeTitle)
+                    recipeList.appendChild(recipeEntry)
+                })
+            }
+        }
+
+        addRecipesToList()
+
+    </script>
+</head>
+
+<body>
+    <nav-bar active-page="recipes"></nav-bar>
+    <main>
+        <h1>Recipes</h1>
+        <div class="recipe-list">
+        </div>
+    </main>
+</body>
+
+</html>
