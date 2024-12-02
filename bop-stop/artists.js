@@ -590,5 +590,52 @@ export const artists = [
                 "url": "https://www.youtube.com/watch?v=syC_-AEyXgg"
             }
         ]
+    },
+    {
+        "name": "Jackson Wang",
+        "coordinates": [
+            22.350627,
+            114.1849161
+        ],
+        "markerImage": "https://resources.tidal.com/images/d6e72bfa/29e8/425a/9fdb/790ae6555542/750x750.jpg",
+        "cardImage": "https://i.scdn.co/image/ab6761610000e5eb0405e7cc11aecb995703d398",
+        "songs": [
+            {
+                "name": "Titanic",
+                "url": "https://www.youtube.com/watch?v=HKCmh9Q0jZg"
+            },
+            {
+                "name": "100 Ways",
+                "url": "https://www.youtube.com/watch?v=87VRaM5_bAE"
+            },
+            {
+                "name": "Cruel",
+                "url": "https://www.youtube.com/watch?v=Rhy7_Y15FrI"
+            }
+        ]
+    },
+    {
+        "name": "Seedhe Maut",
+        "coordinates": [
+            28.639526675154492,
+            76.94274902343751
+        ],
+        "markerImage": "https://pearlentertainment.in/wp-content/uploads/2024/08/Seedhe_Maut4.jpg",
+        "cardImage": "https://lh3.googleusercontent.com/proxy/0zHaFMpaEYGoGSE_NHRgA4EOG19OBV1P-IgOgcT1inHB9TTDTBR23xUWH8gZ_XajzqFtxLzU8DKamPqkHHW2nc0pTkVDPe-W1lx-rPVrI-zGl_Mm1EWoxFLzeBNgzhAT_t8lXXQ2",
+        "songs": [
+            {
+                "name": "Khatta Flow",
+                "url": "https://www.youtube.com/watch?v=qVcHlaFZf6A"
+            },
+            {
+                "name": "Kodak",
+                "url": "https://www.youtube.com/watch?v=Ecs-foVS74Q"
+            },
+            {
+                "name": "TT",
+                "url": "https://www.youtube.com/watch?v=vgpH9go537Q"
+            }
+        ]
     }
+
 ];

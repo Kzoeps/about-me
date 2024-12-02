@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="/recipes/index.css" />
+    <script src="/nav-bar.js" type="module"></script>
+</head>
+
+<body>
+    <nav-bar active-page="recipes"></nav-bar>
+    <main class="main-content">
+        <div class="container">
+            <h1 class="recipe-name">Recipe Name</h1>
+            <div class="recipe-image-container">
+                <img class="recipe-image" src="" alt="Dish Image" style="display: none;" />
+            </div>
+            <section class="ingredients-section">
+                <h2>Ingredients</h2>
+                <ul class="ingredients-list">
+                    <!-- Ingredients will be listed here -->
+                </ul>
+            </section>
+            <section class="steps-section">
+                <h2>Steps</h2>
+                <ol class="steps-list">
+                    <!-- Steps will be listed here -->
+                </ol>
+            </section>
+        </div>
+    </main>
+    <script type="module">
+        const recipeData = {
+            name: "Sample Recipe",
+            image: "", // URL to the image, leave empty if no image
+            ingredients: [
+                "1 cup of flour",
+                "2 eggs",
+                "1/2 cup of sugar"
+            ],
+            steps: [
+                "Mix all ingredients together.",
+                "Pour into a baking dish.",
+                "Bake at 180°C for 30 minutes."
+            ]
+        };
+
+        document.querySelector('.recipe-name').textContent = recipeData.name;
+
+        if (recipeData.image) {
+            const recipeImage = document.querySelector('.recipe-image');
+            recipeImage.src = recipeData.image;
+            recipeImage.style.display = 'block';
+        }
+
+        const ingredientsList = document.querySelector('.ingredients-list');
+        recipeData.ingredients.forEach(ingredient => {
+            const li = document.createElement('li');
+            li.textContent = ingredient;
+            ingredientsList.appendChild(li);
+        });
+
+        const stepsList = document.querySelector('.steps-list');
+        recipeData.steps.forEach(step => {
+            const li = document.createElement('li');
+            li.textContent = step;
+            stepsList.appendChild(li);
+        });
+    </script>
+</body>
+
+</html>
