@@ -333,7 +333,7 @@ function loadData(dataPath = '/zhimya/data/dzongkhag-population.json', selectedS
         map.removeLayer(geoLayer);
     }
     Promise.all([
-        d3.json("gadm41_BTN_1.json"),
+        d3.json("/data/dzongkhag-markers.json"),
         d3.json(dataPath)
     ])
         .then(([geoJsonData, populationData]) => {
