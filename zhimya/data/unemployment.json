@@ -1,0 +1,254 @@
+{
+  "Bumthang": {
+    "Number": {
+      "Male": 101,
+      "Female": 148,
+      "Total": 250
+    },
+    "Unemployment Rate (%)": {
+      "Male": 2.70,
+      "Female": 3.70,
+      "Total": 3.20
+    }
+  },
+  "Chhukha": {
+    "Number": {
+      "Male": 564,
+      "Female": 785,
+      "Total": 1348
+    },
+    "Unemployment Rate (%)": {
+      "Male": 3.40,
+      "Female": 8.70,
+      "Total": 5.30
+    }
+  },
+  "Dagana": {
+    "Number": {
+      "Male": 87,
+      "Female": 159,
+      "Total": 246
+    },
+    "Unemployment Rate (%)": {
+      "Male": 1.20,
+      "Female": 2.50,
+      "Total": 1.80
+    }
+  },
+  "Gasa": {
+    "Number": {
+      "Male": 2,
+      "Female": 8,
+      "Total": 10
+    },
+    "Unemployment Rate (%)": {
+      "Male": 0.20,
+      "Female": 1.10,
+      "Total": 0.60
+    }
+  },
+  "Haa": {
+    "Number": {
+      "Male": 69,
+      "Female": 155,
+      "Total": 223
+    },
+    "Unemployment Rate (%)": {
+      "Male": 2.60,
+      "Female": 6.40,
+      "Total": 4.40
+    }
+  },
+  "Lhuentse": {
+    "Number": {
+      "Male": 34,
+      "Female": 131,
+      "Total": 165
+    },
+    "Unemployment Rate (%)": {
+      "Male": 1.00,
+      "Female": 3.50,
+      "Total": 2.30
+    }
+  },
+  "Monggar": {
+    "Number": {
+      "Male": 244,
+      "Female": 310,
+      "Total": 554
+    },
+    "Unemployment Rate (%)": {
+      "Male": 2.80,
+      "Female": 3.30,
+      "Total": 3.10
+    }
+  },
+  "Paro": {
+    "Number": {
+      "Male": 503,
+      "Female": 669,
+      "Total": 1172
+    },
+    "Unemployment Rate (%)": {
+      "Male": 4.40,
+      "Female": 8.80,
+      "Total": 6.10
+    }
+  },
+  "Pema Gatshel": {
+    "Number": {
+      "Male": 27,
+      "Female": 122,
+      "Total": 149
+    },
+    "Unemployment Rate (%)": {
+      "Male": 0.50,
+      "Female": 2.20,
+      "Total": 1.30
+    }
+  },
+  "Punakha": {
+    "Number": {
+      "Male": 101,
+      "Female": 275,
+      "Total": 375
+    },
+    "Unemployment Rate (%)": {
+      "Male": 1.90,
+      "Female": 4.80,
+      "Total": 3.40
+    }
+  },
+  "Samdrup Jongkhar": {
+    "Number": {
+      "Male": 205,
+      "Female": 293,
+      "Total": 499
+    },
+    "Unemployment Rate (%)": {
+      "Male": 2.60,
+      "Female": 4.60,
+      "Total": 3.50
+    }
+  },
+  "Samtse": {
+    "Number": {
+      "Male": 370,
+      "Female": 701,
+      "Total": 1071
+    },
+    "Unemployment Rate (%)": {
+      "Male": 2.30,
+      "Female": 8.00,
+      "Total": 4.30
+    }
+  },
+  "Sarpang": {
+    "Number": {
+      "Male": 624,
+      "Female": 859,
+      "Total": 1483
+    },
+    "Unemployment Rate (%)": {
+      "Male": 5.90,
+      "Female": 15.00,
+      "Total": 9.10
+    }
+  },
+  "Thimphu": {
+    "Number": {
+      "Male": 3708,
+      "Female": 4098,
+      "Total": 7806
+    },
+    "Unemployment Rate (%)": {
+      "Male": 10.10,
+      "Female": 15.80,
+      "Total": 12.50
+    }
+  },
+  "Trashigang": {
+    "Number": {
+      "Male": 164,
+      "Female": 489,
+      "Total": 653
+    },
+    "Unemployment Rate (%)": {
+      "Male": 1.70,
+      "Female": 4.70,
+      "Total": 3.20
+    }
+  },
+  "Trashi Yangtse": {
+    "Number": {
+      "Male": 85,
+      "Female": 234,
+      "Total": 320
+    },
+    "Unemployment Rate (%)": {
+      "Male": 2.50,
+      "Female": 7.20,
+      "Total": 4.70
+    }
+  },
+  "Trongsa": {
+    "Number": {
+      "Male": 63,
+      "Female": 60,
+      "Total": 123
+    },
+    "Unemployment Rate (%)": {
+      "Male": 1.80,
+      "Female": 2.00,
+      "Total": 1.90
+    }
+  },
+  "Tsirang": {
+    "Number": {
+      "Male": 158,
+      "Female": 174,
+      "Total": 332
+    },
+    "Unemployment Rate (%)": {
+      "Male": 2.60,
+      "Female": 3.00,
+      "Total": 2.80
+    }
+  },
+  "Wangdue Phodrang": {
+    "Number": {
+      "Male": 295,
+      "Female": 714,
+      "Total": 1010
+    },
+    "Unemployment Rate (%)": {
+      "Male": 3.70,
+      "Female": 9.30,
+      "Total": 6.40
+    }
+  },
+  "Zhemgang": {
+    "Number": {
+      "Male": 109,
+      "Female": 298,
+      "Total": 408
+    },
+    "Unemployment Rate (%)": {
+      "Male": 2.90,
+      "Female": 9.30,
+      "Total": 5.80
+    }
+  },
+  "Total": {
+    "Number": {
+      "Male": 7515,
+      "Female": 10683,
+      "Total": 18198
+    },
+    "Unemployment Rate (%)": {
+      "Male": 4.40,
+      "Female": 7.90,
+      "Total": 5.90
+    }
+  }
+}

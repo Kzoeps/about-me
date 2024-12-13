@@ -1,0 +1,122 @@
+[
+  {
+    "dzongkhag": "Bumthang, Chamkhar",
+    "maxTemperature": 18.2,
+    "minTemperature": 6.7,
+    "averageTemperature": 12.7
+  },
+  {
+    "dzongkhag": "Chhukha",
+    "maxTemperature": 23.0,
+    "minTemperature": 16.1,
+    "averageTemperature": 23.4
+  },
+  {
+    "dzongkhag": "Dagana",
+    "maxTemperature": 14.4,
+    "minTemperature": 13.2,
+    "averageTemperature": 16.3
+  },
+  {
+    "dzongkhag": "Gasa",
+    "maxTemperature": 9.5,
+    "minTemperature": 4.5,
+    "averageTemperature": 10.0
+  },
+  {
+    "dzongkhag": "Haa",
+    "maxTemperature": 15.3,
+    "minTemperature": 4.6,
+    "averageTemperature": 10.0
+  },
+  {
+    "dzongkhag": "Lhuentse, Tangmachu",
+    "maxTemperature": 26.8,
+    "minTemperature": 13.8,
+    "averageTemperature": 20.9
+  },
+  {
+    "dzongkhag": "Monggar",
+    "maxTemperature": 21.4,
+    "minTemperature": 13.2,
+    "averageTemperature": 18.0
+  },
+  {
+    "dzongkhag": "Punakha",
+    "maxTemperature": 28.3,
+    "minTemperature": 15.9,
+    "averageTemperature": 22.7
+  },
+  {
+    "dzongkhag": "Paro",
+    "maxTemperature": 19.8,
+    "minTemperature": 6.4,
+    "averageTemperature": 13.3
+  },
+  {
+    "dzongkhag": "Pema Gatshel",
+    "maxTemperature": 25.2,
+    "minTemperature": 12.5,
+    "averageTemperature": 16.0
+  },
+  {
+    "dzongkhag": "Samdrup Jongkhar, Deothang",
+    "maxTemperature": 23.9,
+    "minTemperature": 16.5,
+    "averageTemperature": 21.1
+  },
+  {
+    "dzongkhag": "Samtse, Sipsu",
+    "maxTemperature": 27.2,
+    "minTemperature": 17.9,
+    "averageTemperature": 23.1
+  },
+  {
+    "dzongkhag": "Sarpang, Bhur",
+    "maxTemperature": 27.3,
+    "minTemperature": 20.2,
+    "averageTemperature": 24.5
+  },
+  {
+    "dzongkhag": "Thimphu, Simtokha",
+    "maxTemperature": 19.5,
+    "minTemperature": 6.3,
+    "averageTemperature": 13.4
+  },
+  {
+    "dzongkhag": "Trashigang, Kanglung",
+    "maxTemperature": 21.1,
+    "minTemperature": 10.4,
+    "averageTemperature": 16.1
+  },
+  {
+    "dzongkhag": "Trashi Yangtse",
+    "maxTemperature": 19.0,
+    "minTemperature": 9.5,
+    "averageTemperature": 16.4
+  },
+  {
+    "dzongkhag": "Trongsa",
+    "maxTemperature": 19.0,
+    "minTemperature": 9.3,
+    "averageTemperature": 14.6
+  },
+  {
+    "dzongkhag": "Tsirang, Damphu",
+    "maxTemperature": 16.6,
+    "minTemperature": 13.1,
+    "averageTemperature": 17.1
+  },
+  {
+    "dzongkhag": "Wangdue Phodrang, (RNRRC)",
+    "maxTemperature": 25.1,
+    "minTemperature": 15.6,
+    "averageTemperature": 20.9
+  },
+  {
+    "dzongkhag": "Zhemgang",
+    "maxTemperature": 20.0,
+    "minTemperature": 10.7,
+    "averageTemperature": 15.5
+  }
+]

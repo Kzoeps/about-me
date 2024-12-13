@@ -1,0 +1,142 @@
+[
+  {
+    "dzongkhag": "Bumthang",
+    "dzongkhagArea": 269091.2,
+    "forestArea": 139356.7,
+    "forestCover": "139,356.7 hectares",
+    "forestCoverPercentage": 51.8
+  },
+  {
+    "dzongkhag": "Chhukha",
+    "dzongkhagArea": 186149.3,
+    "forestArea": 166151.1,
+    "forestCover": "166,151.1 hectares",
+    "forestCoverPercentage": 89.3
+  },
+  {
+    "dzongkhag": "Dagana",
+    "dzongkhagArea": 170607.9,
+    "forestArea": 152086.1,
+    "forestCover": "152,086.1 hectares",
+    "forestCoverPercentage": 89.1
+  },
+  {
+    "dzongkhag": "Gasa",
+    "dzongkhagArea": 310397.8,
+    "forestArea": 60853.0,
+    "forestCover": "60,853.0 hectares",
+    "forestCoverPercentage": 19.6
+  },
+  {
+    "dzongkhag": "Haa",
+    "dzongkhagArea": 188635.3,
+    "forestArea": 125772.4,
+    "forestCover": "125,772.4 hectares",
+    "forestCoverPercentage": 66.7
+  },
+  {
+    "dzongkhag": "Lhuentse",
+    "dzongkhagArea": 283090.6,
+    "forestArea": 183421.0,
+    "forestCover": "183,421.0 hectares",
+    "forestCoverPercentage": 64.8
+  },
+  {
+    "dzongkhag": "Monggar",
+    "dzongkhagArea": 192536.0,
+    "forestArea": 175886.9,
+    "forestCover": "175,886.9 hectares",
+    "forestCoverPercentage": 91.4
+  },
+  {
+    "dzongkhag": "Paro",
+    "dzongkhagArea": 127461.3,
+    "forestArea": 66282.7,
+    "forestCover": "66,282.7 hectares",
+    "forestCoverPercentage": 52.0
+  },
+  {
+    "dzongkhag": "Pema Gatshel",
+    "dzongkhagArea": 101216.7,
+    "forestArea": 91926.7,
+    "forestCover": "91,926.7 hectares",
+    "forestCoverPercentage": 90.8
+  },
+  {
+    "dzongkhag": "Punakha",
+    "dzongkhagArea": 109878.0,
+    "forestArea": 91894.9,
+    "forestCover": "91,894.9 hectares",
+    "forestCoverPercentage": 83.6
+  },
+  {
+    "dzongkhag": "Samdrup Jongkhar",
+    "dzongkhagArea": 185881.5,
+    "forestArea": 168689.7,
+    "forestCover": "168,689.7 hectares",
+    "forestCoverPercentage": 90.8
+  },
+  {
+    "dzongkhag": "Samtse",
+    "dzongkhagArea": 129216.0,
+    "forestArea": 105203.2,
+    "forestCover": "105,203.2 hectares",
+    "forestCoverPercentage": 81.4
+  },
+  {
+    "dzongkhag": "Sarpang",
+    "dzongkhagArea": 163928.1,
+    "forestArea": 146852.3,
+    "forestCover": "146,852.3 hectares",
+    "forestCoverPercentage": 89.6
+  },
+  {
+    "dzongkhag": "Thimphu",
+    "dzongkhagArea": 177840.7,
+    "forestArea": 71213.8,
+    "forestCover": "71,213.8 hectares",
+    "forestCoverPercentage": 40.0
+  },
+  {
+    "dzongkhag": "Trashigang",
+    "dzongkhagArea": 218253.3,
+    "forestArea": 172737.7,
+    "forestCover": "172,737.7 hectares",
+    "forestCoverPercentage": 79.2
+  },
+  {
+    "dzongkhag": "Trashi Yangtse",
+    "dzongkhagArea": 143496.3,
+    "forestArea": 100400.0,
+    "forestCover": "100,400.0 hectares",
+    "forestCoverPercentage": 70.0
+  },
+  {
+    "dzongkhag": "Trongsa",
+    "dzongkhagArea": 179607.4,
+    "forestArea": 153725.1,
+    "forestCover": "153,725.1 hectares",
+    "forestCoverPercentage": 85.6
+  },
+  {
+    "dzongkhag": "Tsirang",
+    "dzongkhagArea": 63163.3,
+    "forestArea": 55265.1,
+    "forestCover": "55,265.1 hectares",
+    "forestCoverPercentage": 87.5
+  },
+  {
+    "dzongkhag": "Wangdue Phodrang",
+    "dzongkhagArea": 399640.9,
+    "forestArea": 264061.9,
+    "forestCover": "264,061.9 hectares",
+    "forestCoverPercentage": 66.1
+  },
+  {
+    "dzongkhag": "Zhemgang",
+    "dzongkhagArea": 239308.5,
+    "forestArea": 225361.5,
+    "forestCover": "225,361.5 hectares",
+    "forestCoverPercentage": 94.2
+  }
+]

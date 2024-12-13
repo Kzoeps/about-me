@@ -1,0 +1,170 @@
+{
+  "Bumthang": {
+    "Male": 3815,
+    "Female": 4040,
+    "Total": 7855,
+    "Male Labour Force Participation Rate (%)": 72.04,
+    "Female Labour Force Participation Rate (%)": 67.03,
+    "Total Labour Force Participation Rate (%)": 69.37
+  },
+  "Chhukat": {
+    "Male": 16356,
+    "Female": 8990,
+    "Total": 25347,
+    "Male Labour Force Participation Rate (%)": 77.48,
+    "Female Labour Force Participation Rate (%)": 42.54,
+    "Total Labour Force Participation Rate (%)": 60.00
+  },
+  "Dagana": {
+    "Male": 7023,
+    "Female": 6441,
+    "Total": 13465,
+    "Male Labour Force Participation Rate (%)": 79.04,
+    "Female Labour Force Participation Rate (%)": 68.11,
+    "Total Labour Force Participation Rate (%)": 73.41
+  },
+  "Gasa": {
+    "Male": 929,
+    "Female": 717,
+    "Total": 1646,
+    "Male Labour Force Participation Rate (%)": 77.10,
+    "Female Labour Force Participation Rate (%)": 53.23,
+    "Total Labour Force Participation Rate (%)": 64.50
+  },
+  "Haa": {
+    "Male": 2631,
+    "Female": 2434,
+    "Total": 5065,
+    "Male Labour Force Participation Rate (%)": 76.73,
+    "Female Labour Force Participation Rate (%)": 63.10,
+    "Total Labour Force Participation Rate (%)": 69.51
+  },
+  "Lhuenste": {
+    "Male": 3380,
+    "Female": 3772,
+    "Total": 7152,
+    "Male Labour Force Participation Rate (%)": 72.76,
+    "Female Labour Force Participation Rate (%)": 64.20,
+    "Total Labour Force Participation Rate (%)": 67.98
+  },
+  "Monggar": {
+    "Male": 8635,
+    "Female": 9314,
+    "Total": 17949,
+    "Male Labour Force Participation Rate (%)": 68.94,
+    "Female Labour Force Participation Rate (%)": 68.19,
+    "Total Labour Force Participation Rate (%)": 68.55
+  },
+  "Paro": {
+    "Male": 11559,
+    "Female": 7562,
+    "Total": 19121,
+    "Male Labour Force Participation Rate (%)": 72.30,
+    "Female Labour Force Participation Rate (%)": 44.73,
+    "Total Labour Force Participation Rate (%)": 58.13
+  },
+  "Pema Gatshel": {
+    "Male": 5740,
+    "Female": 5506,
+    "Total": 11246,
+    "Male Labour Force Participation Rate (%)": 75.19,
+    "Female Labour Force Participation Rate (%)": 65.89,
+    "Total Labour Force Participation Rate (%)": 70.33
+  },
+  "Punakha": {
+    "Male": 5429,
+    "Female": 5719,
+    "Total": 11148,
+    "Male Labour Force Participation Rate (%)": 70.87,
+    "Female Labour Force Participation Rate (%)": 61.35,
+    "Total Labour Force Participation Rate (%)": 65.65
+  },
+  "Samdrup Jongkhar": {
+    "Male": 7837,
+    "Female": 6433,
+    "Total": 14271,
+    "Male Labour Force Participation Rate (%)": 70.89,
+    "Female Labour Force Participation Rate (%)": 56.59,
+    "Total Labour Force Participation Rate (%)": 63.64
+  },
+  "Samtse": {
+    "Male": 16087,
+    "Female": 8777,
+    "Total": 24864,
+    "Male Labour Force Participation Rate (%)": 74.36,
+    "Female Labour Force Participation Rate (%)": 42.91,
+    "Total Labour Force Participation Rate (%)": 59.07
+  },
+  "Sarpang": {
+    "Male": 10518,
+    "Female": 5741,
+    "Total": 16259,
+    "Male Labour Force Participation Rate (%)": 67.60,
+    "Female Labour Force Participation Rate (%)": 35.22,
+    "Total Labour Force Participation Rate (%)": 51.03
+  },
+  "Thimphu": {
+    "Male": 36749,
+    "Female": 25909,
+    "Total": 62659,
+    "Male Labour Force Participation Rate (%)": 72.22,
+    "Female Labour Force Participation Rate (%)": 45.91,
+    "Total Labour Force Participation Rate (%)": 58.39
+  },
+  "Trashigang": {
+    "Male": 9854,
+    "Female": 10297,
+    "Total": 20151,
+    "Male Labour Force Participation Rate (%)": 76.65,
+    "Female Labour Force Participation Rate (%)": 72.01,
+    "Total Labour Force Participation Rate (%)": 74.20
+  },
+  "Trashi Yangtse": {
+    "Male": 3486,
+    "Female": 3258,
+    "Total": 6745,
+    "Male Labour Force Participation Rate (%)": 79.70,
+    "Female Labour Force Participation Rate (%)": 60.45,
+    "Total Labour Force Participation Rate (%)": 69.07
+  },
+  "Trongsa": {
+    "Male": 3410,
+    "Female": 3030,
+    "Total": 6440,
+    "Male Labour Force Participation Rate (%)": 72.85,
+    "Female Labour Force Participation Rate (%)": 57.25,
+    "Total Labour Force Participation Rate (%)": 64.57
+  },
+  "Tsirang": {
+    "Male": 6177,
+    "Female": 5741,
+    "Total": 11918,
+    "Male Labour Force Participation Rate (%)": 77.37,
+    "Female Labour Force Participation Rate (%)": 65.88,
+    "Total Labour Force Participation Rate (%)": 71.37
+  },
+  "Wangdue Phodrang": {
+    "Male": 8026,
+    "Female": 7644,
+    "Total": 15670,
+    "Male Labour Force Participation Rate (%)": 76.30,
+    "Female Labour Force Participation Rate (%)": 64.82,
+    "Total Labour Force Participation Rate (%)": 70.23
+  },
+  "Zhemgang": {
+    "Male": 3809,
+    "Female": 3204,
+    "Total": 7013,
+    "Male Labour Force Participation Rate (%)": 69.19,
+    "Female Labour Force Participation Rate (%)": 57.79,
+    "Total Labour Force Participation Rate (%)": 63.47
+  },
+  "Total": {
+    "Male": 170555,
+    "Female": 135428,
+    "Total": 305983,
+    "Male Labour Force Participation Rate (%)": 73.45,
+    "Female Labour Force Participation Rate (%)": 53.48,
+    "Total Labour Force Participation Rate (%)": 63.09
+  }
+}

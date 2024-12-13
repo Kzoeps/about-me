@@ -1,0 +1,263 @@
+{
+  "Bumthang": {
+    "Male": 9396,
+    "Female": 8424,
+    "Both Sex": 17820,
+    "Male %": 52.7,
+    "Female %": 47.3,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 111.5
+  },
+  "Chhukha": {
+    "Male": 36041,
+    "Female": 32925,
+    "Both Sex": 68966,
+    "Male %": 52.3,
+    "Female %": 47.7,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 109.5
+  },
+  "Phuentsholing Thromde": {
+    "Male": 15052,
+    "Female": 12606,
+    "Both Sex": 27658,
+    "Male %": 54.4,
+    "Female %": 45.6,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 118.9
+  },
+  "Other than Phuentsholing Thromde": {
+    "Male": 20989,
+    "Female": 20319,
+    "Both Sex": 41308,
+    "Male %": 50.8,
+    "Female %": 49.2,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 103.6
+  },
+  "Dagana": {
+    "Male": 12956,
+    "Female": 12009,
+    "Both Sex": 24965,
+    "Male %": 51.9,
+    "Female %": 48.1,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 107.9
+  },
+  "Gasa": {
+    "Male": 2104,
+    "Female": 1848,
+    "Both Sex": 3952,
+    "Male %": 53.2,
+    "Female %": 46.8,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 113.9
+  },
+  "Haa": {
+    "Male": 7435,
+    "Female": 6220,
+    "Both Sex": 13655,
+    "Male %": 54.4,
+    "Female %": 45.6,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 119.5
+  },
+  "Lhuentse": {
+    "Male": 7407,
+    "Female": 7030,
+    "Both Sex": 14437,
+    "Male %": 51.3,
+    "Female %": 48.7,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 105.4
+  },
+  "Monggar": {
+    "Male": 18247,
+    "Female": 18903,
+    "Both Sex": 37150,
+    "Male %": 49.1,
+    "Female %": 50.9,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 96.5
+  },
+  "Paro": {
+    "Male": 23941,
+    "Female": 22375,
+    "Both Sex": 46316,
+    "Male %": 51.7,
+    "Female %": 48.3,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 107.0
+  },
+  "Pema Gatshel": {
+    "Male": 11922,
+    "Female": 11710,
+    "Both Sex": 23632,
+    "Male %": 50.4,
+    "Female %": 49.6,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 101.8
+  },
+  "Punakha": {
+    "Male": 15079,
+    "Female": 13661,
+    "Both Sex": 28740,
+    "Male %": 52.5,
+    "Female %": 47.5,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 110.4
+  },
+  "Samdrup Jongkhar": {
+    "Male": 18329,
+    "Female": 16750,
+    "Both Sex": 35079,
+    "Male %": 52.3,
+    "Female %": 47.7,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 109.4
+  },
+  "Samdrup Jongkhar Thromde": {
+    "Male": 5016,
+    "Female": 4309,
+    "Both Sex": 9325,
+    "Male %": 53.8,
+    "Female %": 46.2,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 116.4
+  },
+  "Other than Samdrup Jongkhar": {
+    "Male": 13313,
+    "Female": 12441,
+    "Both Sex": 25754,
+    "Male %": 51.7,
+    "Female %": 48.3,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 107.0
+  },
+  "Samtse": {
+    "Male": 32022,
+    "Female": 30568,
+    "Both Sex": 62590,
+    "Male %": 51.2,
+    "Female %": 48.8,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 104.8
+  },
+  "Sarpang": {
+    "Male": 24018,
+    "Female": 21986,
+    "Both Sex": 46004,
+    "Male %": 52.2,
+    "Female %": 47.8,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 109.2
+  },
+  "Gelephu Thromde": {
+    "Male": 5146,
+    "Female": 4712,
+    "Both Sex": 9858,
+    "Male %": 52.2,
+    "Female %": 47.8,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 109.2
+  },
+  "Other than Gelephu Thromde": {
+    "Male": 18872,
+    "Female": 17274,
+    "Both Sex": 36146,
+    "Male %": 52.2,
+    "Female %": 47.8,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 109.5
+  },
+  "Thimphu": {
+    "Male": 72522,
+    "Female": 66214,
+    "Both Sex": 138736,
+    "Male %": 52.3,
+    "Female %": 47.7,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 109.5
+  },
+  "Thimphu Thromde": {
+    "Male": 58996,
+    "Female": 55555,
+    "Both Sex": 114551,
+    "Male %": 51.5,
+    "Female %": 48.5,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 106.2
+  },
+  "Other than Thimphu Thromde": {
+    "Male": 13526,
+    "Female": 10659,
+    "Both Sex": 24185,
+    "Male %": 55.9,
+    "Female %": 44.1,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 126.9
+  },
+  "Trashigang": {
+    "Male": 23414,
+    "Female": 22104,
+    "Both Sex": 45518,
+    "Male %": 51.4,
+    "Female %": 48.6,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 105.9
+  },
+  "Trashi Yangtse": {
+    "Male": 8719,
+    "Female": 8581,
+    "Both Sex": 17300,
+    "Male %": 50.4,
+    "Female %": 49.6,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 101.6
+  },
+  "Trongsa": {
+    "Male": 11878,
+    "Female": 8082,
+    "Both Sex": 19960,
+    "Male %": 59.5,
+    "Female %": 40.5,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 147.0
+  },
+  "Tsirang": {
+    "Male": 11526,
+    "Female": 10850,
+    "Both Sex": 22376,
+    "Male %": 51.5,
+    "Female %": 48.5,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 106.2
+  },
+  "Wangdue Phodrang": {
+    "Male": 24302,
+    "Female": 17884,
+    "Both Sex": 42186,
+    "Male %": 57.6,
+    "Female %": 42.4,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 135.9
+  },
+  "Zhemgang": {
+    "Male": 9195,
+    "Female": 8568,
+    "Both Sex": 17763,
+    "Male %": 51.8,
+    "Female %": 48.2,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 107.3
+  },
+  "Total": {
+    "Male": 380453,
+    "Female": 346692,
+    "Both Sex": 727145,
+    "Male %": 52.3,
+    "Female %": 47.7,
+    "Both Sex %": 100.0,
+    "Sex Ratio": 109.7
+  }
+}

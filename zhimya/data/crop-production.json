@@ -1,0 +1,296 @@
+{
+  "Bumthang": {
+    "Barley": {
+      "Harvested Area (acres)": 226.8,
+      "Production (MT)": 120.5
+    },
+    "Millet": {
+      "Harvested Area (acres)": 0.1,
+      "Production (MT)": 0.0
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 1.5,
+      "Production (MT)": 0.4
+    }
+  },
+  "Chhukha": {
+    "Barley": {
+      "Harvested Area (acres)": 35.9,
+      "Production (MT)": 16.6
+    },
+    "Millet": {
+      "Harvested Area (acres)": 143.5,
+      "Production (MT)": 63.9
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.7,
+      "Production (MT)": 0.4
+    }
+  },
+  "Dagana": {
+    "Barley": {
+      "Harvested Area (acres)": 19.7,
+      "Production (MT)": 7.0
+    },
+    "Millet": {
+      "Harvested Area (acres)": 120.9,
+      "Production (MT)": 49.6
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.0,
+      "Production (MT)": 0.0
+    }
+  },
+  "Gasa": {
+    "Barley": {
+      "Harvested Area (acres)": 116.1,
+      "Production (MT)": 50.1
+    },
+    "Millet": {
+      "Harvested Area (acres)": 0.0,
+      "Production (MT)": 0.0
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.0,
+      "Production (MT)": 0.0
+    }
+  },
+  "Haa": {
+    "Barley": {
+      "Harvested Area (acres)": 24.8,
+      "Production (MT)": 11.0
+    },
+    "Millet": {
+      "Harvested Area (acres)": 23.5,
+      "Production (MT)": 8.9
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.0,
+      "Production (MT)": 0.0
+    }
+  },
+  "Lhuenste": {
+    "Barley": {
+      "Harvested Area (acres)": 0.3,
+      "Production (MT)": 0.1
+    },
+    "Millet": {
+      "Harvested Area (acres)": 46.1,
+      "Production (MT)": 25.7
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.6,
+      "Production (MT)": 0.1
+    }
+  },
+  "Monggar": {
+    "Barley": {
+      "Harvested Area (acres)": 307.3,
+      "Production (MT)": 150.6
+    },
+    "Millet": {
+      "Harvested Area (acres)": 11.6,
+      "Production (MT)": 4.9
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 4.5,
+      "Production (MT)": 1.6
+    }
+  },
+  "Paro": {
+    "Barley": {
+      "Harvested Area (acres)": 67.7,
+      "Production (MT)": 42.5
+    },
+    "Millet": {
+      "Harvested Area (acres)": 3.3,
+      "Production (MT)": 1.2
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.0,
+      "Production (MT)": 0.0
+    }
+  },
+  "Pema Gatshel": {
+    "Barley": {
+      "Harvested Area (acres)": 7.2,
+      "Production (MT)": 3.1
+    },
+    "Millet": {
+      "Harvested Area (acres)": 62.3,
+      "Production (MT)": 26.8
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.3,
+      "Production (MT)": 0.1
+    }
+  },
+  "Punakha": {
+    "Barley": {
+      "Harvested Area (acres)": 19.6,
+      "Production (MT)": 7.1
+    },
+    "Millet": {
+      "Harvested Area (acres)": 0.1,
+      "Production (MT)": 0.1
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.0,
+      "Production (MT)": 0.0
+    }
+  },
+  "Samdrup Jongkhar": {
+    "Barley": {
+      "Harvested Area (acres)": 29.5,
+      "Production (MT)": 10.5
+    },
+    "Millet": {
+      "Harvested Area (acres)": 49.6,
+      "Production (MT)": 21.9
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.2,
+      "Production (MT)": 0.1
+    }
+  },
+  "Samtse": {
+    "Barley": {
+      "Harvested Area (acres)": 4.1,
+      "Production (MT)": 1.8
+    },
+    "Millet": {
+      "Harvested Area (acres)": 308.5,
+      "Production (MT)": 129.5
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 2.2,
+      "Production (MT)": 0.7
+    }
+  },
+  "Sarpang": {
+    "Barley": {
+      "Harvested Area (acres)": 0.1,
+      "Production (MT)": 0.1
+    },
+    "Millet": {
+      "Harvested Area (acres)": 131.8,
+      "Production (MT)": 56.4
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 1.5,
+      "Production (MT)": 0.5
+    }
+  },
+  "Thimphu": {
+    "Barley": {
+      "Harvested Area (acres)": 10.4,
+      "Production (MT)": 5.1
+    },
+    "Millet": {
+      "Harvested Area (acres)": 0.1,
+      "Production (MT)": 0.1
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.0,
+      "Production (MT)": 0.0
+    }
+  },
+  "Trashigang": {
+    "Barley": {
+      "Harvested Area (acres)": 75.9,
+      "Production (MT)": 36.5
+    },
+    "Millet": {
+      "Harvested Area (acres)": 29.8,
+      "Production (MT)": 13.6
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 22.4,
+      "Production (MT)": 13.9
+    }
+  },
+  "Trashi Yangtse": {
+    "Barley": {
+      "Harvested Area (acres)": 3.0,
+      "Production (MT)": 1.4
+    },
+    "Millet": {
+      "Harvested Area (acres)": 170.8,
+      "Production (MT)": 116.4
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 1.1,
+      "Production (MT)": 0.4
+    }
+  },
+  "Trongsa": {
+    "Barley": {
+      "Harvested Area (acres)": 235.7,
+      "Production (MT)": 103.2
+    },
+    "Millet": {
+      "Harvested Area (acres)": 13.8,
+      "Production (MT)": 5.5
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.1,
+      "Production (MT)": 0.1
+    }
+  },
+  "Tsirang": {
+    "Barley": {
+      "Harvested Area (acres)": 3.2,
+      "Production (MT)": 1.0
+    },
+    "Millet": {
+      "Harvested Area (acres)": 119.8,
+      "Production (MT)": 51.0
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.2,
+      "Production (MT)": 0.0
+    }
+  },
+  "Wangdue Phodrang": {
+    "Barley": {
+      "Harvested Area (acres)": 112.7,
+      "Production (MT)": 45.3
+    },
+    "Millet": {
+      "Harvested Area (acres)": 6.6,
+      "Production (MT)": 2.8
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.0,
+      "Production (MT)": 0.0
+    }
+  },
+  "Zhemgang": {
+    "Barley": {
+      "Harvested Area (acres)": 5.2,
+      "Production (MT)": 1.4
+    },
+    "Millet": {
+      "Harvested Area (acres)": 55.4,
+      "Production (MT)": 23.2
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 0.3,
+      "Production (MT)": 0.1
+    }
+  },
+  "TOTAL": {
+    "Barley": {
+      "Harvested Area (acres)": 1305.2,
+      "Production (MT)": 614.9
+    },
+    "Millet": {
+      "Harvested Area (acres)": 1297.7,
+      "Production (MT)": 601.5
+    },
+    "Quinoa": {
+      "Harvested Area (acres)": 35.8,
+      "Production (MT)": 18.3
+    }
+  }
+}
