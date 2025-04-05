@@ -20,8 +20,7 @@ let isMouseDown = false;
 
 function createPostElement(postId, content, left, top) {
   const postElement = document.createElement("div");
-  const isAuthor = !!localStorage.getItem("token")
-  postElement.setAttribute("contenteditable", isAuthor ? "true" : "false");
+  postElement.setAttribute("contenteditable", hasCreds() ? "true" : "false");
   postElement.setAttribute("id", postId);
   postElement.style.transform = `rotate(${getRandomRotation()}deg)`;
   postElement.classList.add("post-container");
