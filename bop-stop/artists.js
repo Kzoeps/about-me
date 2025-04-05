@@ -636,6 +636,28 @@ export const artists = [
                 "url": "https://www.youtube.com/watch?v=vgpH9go537Q"
             }
         ]
+    },
+    {
+        "name": "Yenlik",
+        "coordinates": [
+            43.2363924,
+            76.9457275
+        ],
+        "markerImage": "https://cdn-images.dzcdn.net/images/artist/4801f1e34988692cfa2088f74052264a/1900x1900-000000-80-0-0.jpg",
+        "cardImage": "https://yt3.googleusercontent.com/uoc5kSYJOOF9wnXH9jkssgAeU1kuTmUb6Qgkswol_KPTYGLtJpcaPsjzrRsuketUxo-W1TGr=s900-c-k-c0x00ffffff-no-rj",
+        "songs": [
+            {
+                "name": "Ne Isteisiń?",
+                "url": "https://www.youtube.com/watch?v=MBttLOS0Uiw"
+            },
+            {
+                "name": "I Can Believe",
+                "url": "https://www.youtube.com/watch?v=kn0fXUY3mf4"
+            },
+            {
+                "name": "Dosyma Hat",
+                "url": "https://www.youtube.com/watch?v=VZkU0bF0CFE"
+            }
+        ]
     }
-
 ];
