@@ -659,5 +659,24 @@ export const artists = [
                 "url": "https://www.youtube.com/watch?v=VZkU0bF0CFE"
             }
         ]
+    },
+    {
+        "name": "Beckth & Tibo",
+        "coordinates": [
+            43.6136955,
+            77.1358136
+        ],
+        "markerImage": "/images/beckth_tibo.jpg",
+        "cardImage": "/images/beckth_tibo_cover.jpg",
+        "songs": [
+            {
+                "name": "tylsym",
+                "url": "https://youtu.be/_dOC30b8t9Y?feature=shared"
+            },
+            {
+                "name": "ooh-ooh",
+                "url": "https://www.youtube.com/watch?v=h1bvGEp_Xp8&pp=ygUedHlsc3ltIGJlY2t0aCBhbmQgdGlibyBvb2ggb29o"
+            }
+        ]
     }
 ];
